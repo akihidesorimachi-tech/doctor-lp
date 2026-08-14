@@ -355,7 +355,7 @@ export default function AnswerElementary() {
           {/* バナー画像 */}
           <div style={{ marginTop: "24px" }}>
             <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663402604684/JbWPLUXVZdQfasoqMu5Tg2/hero_banner_9cc7f1af.jpeg"
+              src="/images/hero-banner.jpeg"
               alt="お金の答えは1級FPと税理士に聞くのが早い！"
               style={{ width: "100%", height: "auto", display: "block", borderRadius: "10px" }}
             />

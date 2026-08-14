@@ -549,10 +549,10 @@ export default function Home() {
   // 全レベルの画像をプリロード（ボタン押下時に即表示するため）
   useEffect(() => {
     const preloadUrls = [
-      "/manus-storage/beginner_catchcopy_b7d0273c.jpeg",
-      "/manus-storage/catchcopy_elementary_dfabc8a7.jpeg",
-      "https://d2xsxph8kpxj0f.cloudfront.net/310519663402604684/JbWPLUXVZdQfasoqMu5Tg2/catchcopy_doctor_643479f5.jpeg",
-      "/manus-storage/catchcopy_advanced_56d77ae8.jpeg",
+      "/images/catchcopy-beginner.jpeg",
+      "/images/catchcopy-elementary.jpeg",
+      "/images/catchcopy-doctor.jpeg",
+      "/images/catchcopy-advanced.jpeg",
     ];
     preloadUrls.forEach((url) => {
       const img = new Image();
@@ -641,7 +641,7 @@ export default function Home() {
           {/* バナー画像 */}
           <div style={{ padding: "8px 16px 4px" }}>
             <img
-              src="/manus-storage/banner_doctor_new_8a20a12b.jpeg"
+              src="/images/banner-doctor.jpeg"
               alt="お金の答えは1級FPと税理士に聞くのが早い！"
               style={{ width: "100%", height: "auto", display: "block" }}
             />
@@ -766,7 +766,7 @@ export default function Home() {
               </div>
               <div style={{ padding: "0 16px 4px" }}>
                 <img
-                  src="/manus-storage/beginner_catchcopy_b7d0273c.jpeg"
+                  src="/images/catchcopy-beginner.jpeg"
                   alt="何から始めれば良い？忙しいので効率的に答えを知りたい"
                   style={{ width: "100%", height: "auto", display: "block" }}
                 />
@@ -1002,7 +1002,7 @@ export default function Home() {
               </div>
               <div style={{ padding: "0 16px 4px" }}>
                 <img
-                  src="/manus-storage/catchcopy_elementary_dfabc8a7.jpeg"
+                  src="/images/catchcopy-elementary.jpeg"
                   alt="少額投資だけで満足している勤務医の先生へ"
                   style={{ width: "100%", height: "auto", display: "block" }}
                 />
@@ -1311,7 +1311,7 @@ export default function Home() {
               </div>
               <div style={{ padding: "0 16px 4px" }}>
                 <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663402604684/JbWPLUXVZdQfasoqMu5Tg2/catchcopy_doctor_643479f5.jpeg"
+                  src="/images/catchcopy-doctor.jpeg"
                   alt="NISAでオルカンやS&P500だけで本当に大丈夫なのか？"
                   style={{ width: "100%", height: "auto", display: "block" }}
                 />
@@ -1524,7 +1524,7 @@ export default function Home() {
               </div>
               <div style={{ padding: "0 16px 4px" }}>
                 <img
-                  src="/manus-storage/catchcopy_advanced_56d77ae8.jpeg"
+                  src="/images/catchcopy-advanced.jpeg"
                   alt="個別株・債券も持つ上級者の勤務医の先生へ"
                   style={{ width: "100%", height: "auto", display: "block" }}
                 />

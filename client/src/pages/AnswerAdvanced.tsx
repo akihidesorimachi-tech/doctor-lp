@@ -361,7 +361,7 @@ export default function AnswerAdvanced() {
           {/* バナー画像 */}
           <div style={{ marginTop: "8px" }}>
             <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663402604684/JbWPLUXVZdQfasoqMu5Tg2/hero_banner_9cc7f1af.jpeg"
+              src="/images/hero-banner.jpeg"
               alt="お金の答えは1級フィナンシャルプランナーと税理士に聴くのが早い！"
               style={{ width: "100%", height: "auto", display: "block", borderRadius: "10px" }}
             />
