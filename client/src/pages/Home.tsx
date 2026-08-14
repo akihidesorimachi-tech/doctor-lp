@@ -23,7 +23,6 @@
 import React, { useState, useEffect } from "react";
 import FeeSection from "@/components/FeeSection";
 import { useLocation } from "wouter";
-import { useAuth } from "@/_core/hooks/useAuth";
 import {
   ChevronRight,
   ChevronDown,
@@ -517,10 +516,6 @@ function SurveyBlock({ answerPath, answerLabel, accentColor, navigate, q1, setQ1
 
 
 export default function Home() {
-  // The userAuth hooks provides authentication state
-  // To implement login/logout functionality, simply call logout() or redirect to getLoginUrl()
-  let { user, loading, error, isAuthenticated, logout } = useAuth();
-
   const [, navigate] = useLocation();
   const [activeLevel, setActiveLevel] = useState<string | null>(null);
   const [showFixedCta, setShowFixedCta] = useState(false);
