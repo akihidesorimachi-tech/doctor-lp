@@ -180,16 +180,32 @@ const applyOptions = [
 // ===== 相談者の声 =====
 const voices = [
   {
-    tag: "早期からのサポート",
-    text: "投資を含む資産形成全般に関して最新の情報を提供してくださいます。後期研修医の頃からお世話になっており、早い時期から金融に興味を持てて良かったです。",
-    name: "Wさん（30代開業医）",
-    role: "元外科",
+    tag: "論理的で信頼できる",
+    text: "説明が論理的で腹落ちしやすく、暗黙知になりがちな前提や根拠も明確に伝えてくれるので信頼して相談できます。市場やマクロ環境の変化も踏まえた提案を、スピード感ある対話で進められるのも一つの魅力です。",
+    name: "Y.Hさん（30代）",
+    role: "外資系戦略コンサル勤務 / マネージャー",
+    avatar: "/images/client-yh-avatar_b31f5eb0_2fef5ba8.jpg",
   },
   {
     tag: "納得できる提案",
-    text: "説明がとてもわかりやすく、家計の整理をした上でこちらの状況に合わせた提案をしてくれるので、納得しながら判断できます。資産形成の基本だけでなく、最近の市況トレンドも踏まえてアドバイスをもらえるので、忙しい中でも安心して相談できています。",
-    name: "Oさん（30代・市中病院勤務医）",
-    role: "内科",
+    text: "説明がとてもロジカルでわかりやすく、家計の整理をした上でこちらの状況に合わせた提案をしてくれるので、納得しながら判断できます。資産形成の基本だけでなく、最近の市況トレンドも踏まえてアドバイスをもらえるので、忙しい中でも安心して相談できています。",
+    name: "A.Oさん（30代）",
+    role: "市中病院勤務 / 内科医",
+    avatar: "/images/client-ao-avatar_4dfd8bb8_c80185eb.jpg",
+  },
+  {
+    tag: "初心者にも丁寧",
+    text: "最初NISAやiDeCoも始めていない状態でお話を聞きましたが、初心者にもとても分かりやすく投資や資産形成について教えてくださりました。勤務先や状況が変わる時に相談できるのは心強いと思いました。",
+    name: "Y.Sさん（30代）",
+    role: "市中病院勤務 / 内科医",
+    avatar: "/images/client-ys-avatar_84b99057_86a03fa8.jpg",
+  },
+  {
+    tag: "早期からのサポート",
+    text: "投資を含む資産形成全般に関して最新の情報を提供してくださいます。後期研修医の頃からお世話になっており、早い時期から金融に興味を持てて良かったです。",
+    name: "O.Wさん（30代）",
+    role: "開業医 / 元外科医",
+    avatar: null,
   },
 ];
 
@@ -549,10 +565,10 @@ export default function Home() {
   // 全レベルの画像をプリロード（ボタン押下時に即表示するため）
   useEffect(() => {
     const preloadUrls = [
-      "/images/catchcopy-beginner.jpeg",
-      "/images/catchcopy-elementary.jpeg",
-      "/images/catchcopy-doctor.jpeg",
-      "/images/catchcopy-advanced.jpeg",
+      "/images/beginner_catchcopy_b7d0273c.jpeg",
+      "/images/catchcopy_elementary_dfabc8a7.jpeg",
+      "/images/catchcopy_doctor_643479f5.jpeg",
+      "/images/catchcopy_advanced_56d77ae8.jpeg",
     ];
     preloadUrls.forEach((url) => {
       const img = new Image();
@@ -641,7 +657,7 @@ export default function Home() {
           {/* バナー画像 */}
           <div style={{ padding: "8px 16px 4px" }}>
             <img
-              src="/images/banner-doctor.jpeg"
+              src="/images/banner_doctor_new_8a20a12b.jpeg"
               alt="お金の答えは1級FPと税理士に聞くのが早い！"
               style={{ width: "100%", height: "auto", display: "block" }}
             />
@@ -766,7 +782,7 @@ export default function Home() {
               </div>
               <div style={{ padding: "0 16px 4px" }}>
                 <img
-                  src="/images/catchcopy-beginner.jpeg"
+                  src="/images/beginner_catchcopy_b7d0273c.jpeg"
                   alt="何から始めれば良い？忙しいので効率的に答えを知りたい"
                   style={{ width: "100%", height: "auto", display: "block" }}
                 />
@@ -1002,7 +1018,7 @@ export default function Home() {
               </div>
               <div style={{ padding: "0 16px 4px" }}>
                 <img
-                  src="/images/catchcopy-elementary.jpeg"
+                  src="/images/catchcopy_elementary_dfabc8a7.jpeg"
                   alt="少額投資だけで満足している勤務医の先生へ"
                   style={{ width: "100%", height: "auto", display: "block" }}
                 />
@@ -1311,7 +1327,7 @@ export default function Home() {
               </div>
               <div style={{ padding: "0 16px 4px" }}>
                 <img
-                  src="/images/catchcopy-doctor.jpeg"
+                  src="/images/catchcopy_doctor_643479f5.jpeg"
                   alt="NISAでオルカンやS&P500だけで本当に大丈夫なのか？"
                   style={{ width: "100%", height: "auto", display: "block" }}
                 />
@@ -1524,7 +1540,7 @@ export default function Home() {
               </div>
               <div style={{ padding: "0 16px 4px" }}>
                 <img
-                  src="/images/catchcopy-advanced.jpeg"
+                  src="/images/catchcopy_advanced_56d77ae8.jpeg"
                   alt="個別株・債券も持つ上級者の勤務医の先生へ"
                   style={{ width: "100%", height: "auto", display: "block" }}
                 />
@@ -1698,37 +1714,43 @@ export default function Home() {
           </p>
 
           {/* FP 3段階 */}
-          <div style={{
-            background: "#F5F7FA", borderRadius: "10px", padding: "16px",
-            marginBottom: "16px", border: "1px solid #E5E7EB"
-          }}>
-            <p style={{ fontSize: "0.92rem", fontWeight: 900, color: "#1B2A5E", marginBottom: "12px" }}>FP資格は3段階</p>
-            {[
-              { label: "3級FP", desc: "入門レベル。基礎的な知識を習得。", highlight: false },
-              { label: "2級FP", desc: "実務レベル。より広範な相談に対応。", highlight: false },
-              { label: "1級FP", desc: "最高峰。高度・複合的な相談に対応。国家資格の中でも難関クラス。", highlight: true },
-            ].map((fp) => (
-              <div key={fp.label} style={{
-                display: "flex", gap: "12px", alignItems: "flex-start",
-                padding: "10px 12px", marginBottom: "6px",
-                borderRadius: "8px",
-                background: fp.highlight ? "#1B2A5E" : "#fff",
-                border: `1px solid ${fp.highlight ? "#1B2A5E" : "#E5E7EB"}`,
-              }}>
-                <div style={{ minWidth: "60px", flexShrink: 0 }}>
-                  <span style={{
-                    fontSize: "0.82rem", fontWeight: 900,
-                    color: fp.highlight ? "#F5C400" : "#1B2A5E",
-                    display: "block"
-                  }}>
-                    {fp.label}
-                  </span>
-                  {fp.highlight && <span style={{ display: "inline-block", fontSize: "0.58rem", background: "#F5C400", color: "#1B2A5E", padding: "1px 5px", borderRadius: "3px", marginTop: "3px", fontWeight: 900, whiteSpace: "nowrap" }}>★ 最高峰</span>}
-                </div>
-                <p style={{ fontSize: "0.88rem", color: fp.highlight ? "#E2E8F0" : "#555", lineHeight: 1.5 }}>{fp.desc}</p>
-              </div>
-            ))}
-          </div>
+         <div style={{
+           background: "#F5F7FA", borderRadius: "10px", padding: "16px",
+           marginBottom: "16px", border: "1px solid #E5E7EB"
+         }}>
+           <p style={{ fontSize: "0.92rem", fontWeight: 900, color: "#1B2A5E", marginBottom: "12px" }}>FP資格は3段階</p>
+            <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "0.85rem" }}>
+              <thead>
+               <tr style={{ background: "#E5E7EB" }}>
+                 <th style={{ padding: "8px 10px", textAlign: "left", color: "#555", fontWeight: 700, borderBottom: "1px solid #D1D5DB" }}>資格</th>
+                 <th style={{ padding: "8px 10px", textAlign: "left", color: "#555", fontWeight: 700, borderBottom: "1px solid #D1D5DB" }}>内容</th>
+                  <th style={{ padding: "8px 10px", textAlign: "center", color: "#555", fontWeight: 700, borderBottom: "1px solid #D1D5DB", whiteSpace: "nowrap" }}>合格率</th>
+               </tr>
+             </thead>
+             <tbody>
+               <tr style={{ background: "#fff" }}>
+                 <td style={{ padding: "8px 10px", color: "#555", borderBottom: "1px solid #E5E7EB", whiteSpace: "nowrap" }}>3級FP</td>
+                 <td style={{ padding: "8px 10px", color: "#555", borderBottom: "1px solid #E5E7EB" }}>入門レベル。基礎的な知識を習得。</td>
+                  <td style={{ padding: "8px 10px", textAlign: "center", color: "#555", borderBottom: "1px solid #E5E7EB", whiteSpace: "nowrap" }}>約50%</td>
+               </tr>
+               <tr style={{ background: "#fff" }}>
+                 <td style={{ padding: "8px 10px", color: "#555", borderBottom: "1px solid #E5E7EB", whiteSpace: "nowrap" }}>2級FP</td>
+                 <td style={{ padding: "8px 10px", color: "#555", borderBottom: "1px solid #E5E7EB" }}>実務レベル。より広範な相談に対応。</td>
+                  <td style={{ padding: "8px 10px", textAlign: "center", color: "#555", borderBottom: "1px solid #E5E7EB", whiteSpace: "nowrap" }}>約30%</td>
+               </tr>
+               <tr style={{ background: "#1B2A5E" }}>
+                 <td style={{ padding: "8px 10px", borderBottom: "none", whiteSpace: "nowrap" }}>
+                    <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: "3px" }}>
+                      <span style={{ color: "#F5C400", fontWeight: 900 }}>1級FP</span>
+                      <span style={{ fontSize: "0.58rem", background: "#F5C400", color: "#1B2A5E", padding: "1px 5px", borderRadius: "3px", fontWeight: 900, whiteSpace: "nowrap" }}>★ 最高峰</span>
+                    </div>
+                 </td>
+                 <td style={{ padding: "8px 10px", color: "#E2E8F0", borderBottom: "none", verticalAlign: "middle" }}>最高峰。高度・複合的な相談に対応。国家資格の中でも難関クラス。</td>
+                 <td style={{ padding: "8px 10px", textAlign: "center", color: "#F5C400", fontWeight: 900, borderBottom: "none", whiteSpace: "nowrap" }}>約10%</td>
+               </tr>
+           </tbody>
+            </table>
+         </div>
 
           {/* 0.09% */}
           <div style={{
@@ -1749,45 +1771,16 @@ export default function Home() {
             </div>
           </div>
 
-          {/* 比較表 */}
-          <div style={{
-            background: "#F5F7FA", borderRadius: "10px", padding: "16px",
-            marginBottom: "20px", border: "1px solid #E5E7EB"
-          }}>
-            <p style={{ fontSize: "0.92rem", fontWeight: 900, color: "#1B2A5E", marginBottom: "12px" }}>1級FPと2級FPの違い</p>
-            <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "0.85rem" }}>
-              <thead>
-                <tr>
-                  <th style={{ padding: "8px", textAlign: "left", color: "#666", fontWeight: 700, borderBottom: "1px solid #E5E7EB" }}>項目</th>
-                  <th style={{ padding: "8px", textAlign: "center", color: "#666", fontWeight: 700, borderBottom: "1px solid #E5E7EB" }}>2級FP</th>
-                  <th style={{ padding: "8px", textAlign: "center", color: "#fff", fontWeight: 900, background: "#1B2A5E", borderRadius: "4px 4px 0 0", borderBottom: "1px solid #1B2A5E" }}>1級FP ★</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  { item: "合格率（過去10年平均）", v2: "約30％", v1: "約10％" },
-                  { item: "受験資格", v2: "3級合格者等", v1: "2級合格＋実務1年以上" },
-                  { item: "相談対応範囲", v2: "基礎的な相談", v1: "高度・複合的な相談" },
-                ].map((row, i) => (
-                  <tr key={i}>
-                    <td style={{ padding: "8px", color: "#555", borderBottom: "1px solid #E5E7EB" }}>{row.item}</td>
-                    <td style={{ padding: "8px", textAlign: "center", color: "#555", borderBottom: "1px solid #E5E7EB" }}>{row.v2}</td>
-                    <td style={{ padding: "8px", textAlign: "center", color: "#1B2A5E", fontWeight: 900, background: "#EBF4FF", borderBottom: "1px solid #E5E7EB" }}>{row.v1}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
+         {/* 比較表 */}
           {/* 今回の1級FPはさらに特別 */}
           <p style={{ fontSize: "0.95rem", fontWeight: 900, color: "#1B2A5E", textAlign: "center", marginBottom: "14px" }}>
             今回の1級FPはさらに特別
           </p>
           <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
             {[
-              { point: "POINT 1", title: "ロジカルな説明が得意", desc: "感情論ではなくデータとロジックで資産形成を解説。先生が求めるハイレベルな「なぜ？」に正面から答えます。" },
-              { point: "POINT 2", title: "税理士とのコラボ", desc: "瀧田潤税理士事務所との協力体制により、FPと税理士の両視点から最適なアドバイスを提供。節税と資産形成を同時に解決します。" },
-              { point: "POINT 3", title: "最新のトレンドに精通", desc: "FANG+やS&P10など最新の投資トレンドを常にアップデート。最新情報を元に、先生の資産形成に最適な戦略を提案します。" },
+             { point: "POINT 1", title: "ロジカルな説明が得意", desc: "ロジカルFPの代表FPは旧帝大理系卒業後、ベンチャー企業でコンサルとして研鑽を積んだ後にFPへ転身。彼のノウハウをベースとして、国公立大卒の優秀なFPがコンサルティングを行います。感情論ではなくデータとロジックで先生のハイレベルな「なぜ？」に正面から答えます。" },
+              { point: "POINT 2", title: "AIを凌駕するコンサルティング", desc: "AIは優れたツールである一方、問いの立て方や前提条件によって、回答の質は大きく変わります。診療の現場でも、AIの不正確な情報をもとに不安を抱えて来院する患者さんを目にすることがあるのではないでしょうか。金融も同様です。FANG+やS&P10をはじめ投資トレンドは絶えず更新され、AIだけでは最新情報を十分に捉えきれない場面があります。私たちはAIによるシミュレーションも活用しながら情報を検証し、先生の状況に合った再現性のある資産形成ロジックを構築します。" },
+             { point: "POINT 3", title: "税理士とのコラボ", desc: "瀧田潤税理士事務所との協力体制により、FPと税理士の両視点から最適なアドバイスを提供。節税と資産形成を同時に解決します。" },
             ].map((item) => (
               <div key={item.point} style={{
                 background: "#F5F7FA", borderRadius: "10px", padding: "14px 16px",
@@ -1810,41 +1803,6 @@ export default function Home() {
       <FeeSection />
 
       {/* ===== WHY FREE SECTION ===== */}
-      <section style={{ background: "#F5F7FA", padding: "36px 16px" }}>
-        <div style={{ maxWidth: "480px", margin: "0 auto" }}>
-          <h2 style={{ fontSize: "1.25rem", fontWeight: 900, color: "#1B2A5E", textAlign: "center", marginBottom: "20px" }}>
-            なぜ無料なのか？
-          </h2>
-          <div style={{
-            background: "#fff", borderRadius: "12px", padding: "20px 16px",
-            border: "1px solid #E5E7EB", marginBottom: "16px"
-          }}>
-            <p style={{ fontSize: "0.95rem", fontWeight: 900, color: "#1B2A5E", textAlign: "center", marginBottom: "12px" }}>
-              <span style={{ color: "#ebc924" }}>瀧田潤税理士事務所</span> × <span style={{ color: "#149fff" }}>1級FP</span> コラボ企画
-            </p>
-            <p style={{ fontSize: "0.88rem", color: "#555", lineHeight: 1.7, marginBottom: "16px" }}>
-              勤務医の資産形成・税務支援に強みを持つ瀧田潤税理士事務所が長期目線で行うブランディング施策の一環として、実施しているプロジェクトのため無料です。
-            </p>
-            <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
-              {[
-                "特定の金融商品を勧めることは一切なし",
-                "王道のインデックス投資の使い方を中心に中立的に解説",
-                "安全資産の選択方法をロジカルにアドバイス",
-                "勤務医の収入・税務構造を熟知したFP＋税理士が対応",
-              ].map((text, i) => (
-                <div key={i} style={{ display: "flex", gap: "8px", alignItems: "flex-start" }}>
-                  <CheckCircle size={16} color="#059669" style={{ flexShrink: 0, marginTop: "2px" }} />
-                  <p style={{ fontSize: "0.88rem", color: "#333", lineHeight: 1.5 }}>{text}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== ORANGE DIVIDER ===== */}
-      <div style={{ height: "4px", background: "linear-gradient(90deg, #1B2A5E, #2563EB, #1B2A5E)" }} />
-
       {/* ===== CLIENT VOICES ===== */}
       <section style={{ background: "#fff", padding: "36px 16px" }}>
         <div style={{ maxWidth: "480px", margin: "0 auto" }}>
@@ -1879,21 +1837,29 @@ export default function Home() {
                 <p style={{ fontSize: "0.88rem", color: "#333", lineHeight: 1.7, marginBottom: "12px" }}>
                   "{voice.text}"
                 </p>
-                <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+               <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                {voice.avatar ? (
+                  <img
+                    src={voice.avatar}
+                    alt={voice.name}
+                    style={{ width: "40px", height: "40px", borderRadius: "50%", objectFit: "cover", flexShrink: 0, border: "2px solid #E5E7EB" }}
+                  />
+                ) : (
                   <div style={{
-                    width: "32px", height: "32px", borderRadius: "50%",
+                    width: "40px", height: "40px", borderRadius: "50%",
                     background: "#1B2A5E", display: "flex", alignItems: "center", justifyContent: "center",
                     flexShrink: 0
                   }}>
-                    <span style={{ color: "#F5C400", fontWeight: 900, fontSize: "0.85rem" }}>
-                      {String.fromCharCode(65 + i)}
+                    <span style={{ color: "#F5C400", fontWeight: 900, fontSize: "0.9rem" }}>
+                      {voice.name.charAt(0)}
                     </span>
                   </div>
-                  <div>
-                    <p style={{ fontSize: "0.88rem", fontWeight: 700, color: "#1B2A5E" }}>{voice.name}</p>
-                    <p style={{ fontSize: "0.78rem", color: "#666" }}>{voice.role}</p>
-                  </div>
-                </div>
+                )}
+                 <div>
+                   <p style={{ fontSize: "0.88rem", fontWeight: 700, color: "#1B2A5E" }}>{voice.name}</p>
+                   <p style={{ fontSize: "0.78rem", color: "#666" }}>{voice.role}</p>
+                 </div>
+               </div>
               </div>
             ))}
           </div>

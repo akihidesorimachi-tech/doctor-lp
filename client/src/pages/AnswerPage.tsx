@@ -170,7 +170,7 @@ export default function AnswerPage() {
 
           {/* 二刀流イラスト */}
           <div style={{ marginBottom: "20px" }}>
-            <img src="/images/nitouryu-katana.png" alt="二刀流（大刀・小刀）" style={{ width: "100%", maxWidth: "280px", display: "block", margin: "0 auto" }} />
+            <img src="/images/nitouryu_katana_6ca1165a.png" alt="二刀流（大刀・小刀）" style={{ width: "100%", maxWidth: "280px", display: "block", margin: "0 auto" }} />
             <div style={{ display: "flex", gap: "8px", marginTop: "8px" }}>
               {/* 大刀（左） */}
               <div style={{
@@ -266,7 +266,7 @@ export default function AnswerPage() {
           {/* バナー画像 */}
           <div style={{ marginTop: "24px" }}>
             <img
-              src="/images/hero-banner.jpeg"
+              src="/images/hero_banner_9cc7f1af.jpeg"
               alt="お金の答えは1級FPと税理士に聞くのが早い！"
               style={{ width: "100%", height: "auto", display: "block", borderRadius: "10px" }}
             />

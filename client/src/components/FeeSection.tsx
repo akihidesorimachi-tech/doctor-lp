@@ -1,164 +1,113 @@
 /**
- * FeeSection - 相談料チャートセクション
+ * FeeSection - 相談料チャートセクション（改訂版）
+ * 参考: kanbe-fp サイトの「1級FP相談料の相場」セクションをベースに改修
+ * 「なぜ無料なのか？」を相場の直下に統合
  * Design: Medical Trust Blue（紺×ゴールド×白）
- * Chart.jsドーナツチャートで相談料の相場を視覚化
- * パフォーマンス最適化：IntersectionObserver + ポーリングでChart.jsの読み込みを待つ
  */
-import { useEffect, useRef } from "react";
 
-declare const Chart: any;
-
-const feeData = [
-  { label: "5,000円未満", value: 14.2, color: "#CBD5E1" },
-  { label: "5,000〜10,000円未満", value: 47.3, color: "#1B2A5E" },
-  { label: "10,000〜20,000円未満", value: 33.5, color: "#0f1e3d" },
-  { label: "20,000円以上", value: 5.0, color: "#F5C400" },
-];
+import { CheckCircle } from "lucide-react";
 
 export default function FeeSection() {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const chartRef = useRef<any>(null);
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    let pollTimer: ReturnType<typeof setInterval> | null = null;
-    let observer: IntersectionObserver | null = null;
-
-    const initChart = () => {
-      if (!canvasRef.current) return;
-      if (typeof Chart === "undefined") return;
-      if (chartRef.current) return; // 既に初期化済み
-
-      chartRef.current = new Chart(canvasRef.current, {
-        type: "doughnut",
-        data: {
-          labels: feeData.map((d) => d.label),
-          datasets: [{
-            data: feeData.map((d) => d.value),
-            backgroundColor: feeData.map((d) => d.color),
-            borderColor: "#fff",
-            borderWidth: 3,
-            hoverOffset: 8,
-          }],
-        },
-        options: {
-          responsive: true,
-          cutout: "60%",
-          animation: { duration: 600 },
-          plugins: {
-            legend: { display: false },
-            tooltip: {
-              callbacks: { label: (ctx: any) => `${ctx.label}: ${ctx.parsed}%` },
-            },
-          },
-        },
-      });
-
-      // 初期化成功したらポーリング停止
-      if (pollTimer) {
-        clearInterval(pollTimer);
-        pollTimer = null;
-      }
-    };
-
-    const startPolling = () => {
-      if (typeof Chart !== "undefined") {
-        initChart();
-        return;
-      }
-      // Chart.jsがまだ読み込まれていない場合は100msごとにポーリング（最大5秒）
-      let attempts = 0;
-      pollTimer = setInterval(() => {
-        attempts++;
-        if (typeof Chart !== "undefined") {
-          initChart();
-        }
-        if (attempts >= 50) {
-          if (pollTimer) clearInterval(pollTimer);
-        }
-      }, 100);
-    };
-
-    // IntersectionObserverでビューポートに入ったときだけ初期化
-    if ("IntersectionObserver" in window && sectionRef.current) {
-      observer = new IntersectionObserver(
-        (entries) => {
-          if (entries[0].isIntersecting) {
-            startPolling();
-            observer?.disconnect();
-          }
-        },
-        { rootMargin: "200px" }
-      );
-      observer.observe(sectionRef.current);
-    } else {
-      // IntersectionObserver非対応環境はすぐ初期化
-      startPolling();
-    }
-
-    return () => {
-      if (pollTimer) clearInterval(pollTimer);
-      if (observer) observer.disconnect();
-      chartRef.current?.destroy();
-    };
-  }, []);
-
   return (
-    <section ref={sectionRef} style={{ background: "#F5F7FA", padding: "36px 16px" }}>
+    <section style={{ background: "#F5F7FA", padding: "36px 16px" }}>
       <div style={{ maxWidth: "480px", margin: "0 auto" }}>
         <p style={{ color: "#2563EB", fontWeight: 900, fontSize: "0.85rem", letterSpacing: "0.1em", marginBottom: "8px" }}>
           FEE
         </p>
-        <h2
-          style={{ fontWeight: 900, fontSize: "1.25rem", color: "#1B2A5E", marginBottom: "6px" }}
-        >
-          通常、FP相談は
-          <span style={{ color: "#DC2626" }}>有料</span>
-          です
+        <h2 style={{ fontWeight: 900, fontSize: "1.25rem", color: "#1B2A5E", marginBottom: "6px" }}>
+          通常、<span style={{ color: "#DC2626" }}>1級FP相談は有料</span>です
         </h2>
-        <p style={{ fontSize: "0.88rem", color: "#6B7280", marginBottom: "24px" }}>
-          日本FP協会の調査（2021年度）によると、1時間あたりの相談料は…
+        <p style={{ fontSize: "0.88rem", color: "#6B7280", marginBottom: "28px" }}>
+          10事務所のサンプルを調査した平均相談料（1回あたり）
         </p>
 
-        <div style={{ maxWidth: "240px", margin: "0 auto 20px" }}>
-          <canvas ref={canvasRef} />
-        </div>
-
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px", marginBottom: "24px" }}>
-          {feeData.map((d, i) => (
-            <div key={i} style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-              <span style={{ width: "12px", height: "12px", borderRadius: "3px", flexShrink: 0, background: d.color, display: "inline-block" }} />
-              <span style={{ fontSize: "0.72rem", color: "#6B7280" }}>
-                {d.label} {d.value}%
-              </span>
-            </div>
-          ))}
-        </div>
-
-        {/* Highlight */}
+        {/* 相場金額 */}
         <div
           style={{
+            background: "#fff",
+            border: "2px solid #E5E7EB",
+            borderRadius: "12px",
             padding: "24px 20px",
             textAlign: "center",
-            background: "#1B2A5E",
-            borderRadius: "10px",
-            border: "2px solid #1B2A5E",
-            boxShadow: "4px 4px 0 #F5C400",
+            marginBottom: "16px",
           }}
         >
-          <p style={{ fontSize: "0.72rem", marginBottom: "12px", letterSpacing: "0.1em", color: "rgba(255,255,255,0.5)" }}>
-            今回の相談料
+          <p style={{ fontSize: "0.78rem", color: "#6B7280", marginBottom: "8px", letterSpacing: "0.05em" }}>
+            1級FP相談料の相場（1回あたり）
           </p>
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "12px", flexWrap: "wrap", marginBottom: "16px" }}>
-            <span style={{ fontSize: "0.82rem", textDecoration: "line-through", color: "rgba(255,255,255,0.4)" }}>
-              通常 5,000〜20,000円/時間
-            </span>
-            <span style={{ fontSize: "1.1rem", color: "#F5C400" }}>→</span>
+          <p style={{ fontSize: "0.72rem", color: "#9CA3AF", marginBottom: "12px" }}>
+            ※10事務所のサンプルの平均
+          </p>
+          <div style={{ display: "flex", alignItems: "baseline", justifyContent: "center", gap: "4px" }}>
             <span
-              style={{ fontSize: "2.2rem", fontWeight: 900, color: "#F5C400", letterSpacing: "0.02em" }}
+              style={{
+                fontSize: "2.8rem",
+                fontWeight: 900,
+                color: "#1B2A5E",
+                letterSpacing: "-0.02em",
+                textDecoration: "line-through",
+                textDecorationColor: "#DC2626",
+              }}
             >
-              完全無料
+              10,920
             </span>
+            <span style={{ fontSize: "1.2rem", fontWeight: 700, color: "#1B2A5E" }}>円</span>
+          </div>
+
+          {/* 矢印 */}
+          <div style={{ fontSize: "1.5rem", color: "#F5C400", margin: "8px 0" }}>▼</div>
+
+          {/* TODAY'S OFFER */}
+          <div
+            style={{
+              background: "#1B2A5E",
+              borderRadius: "10px",
+              padding: "20px 16px",
+              boxShadow: "4px 4px 0 #F5C400",
+            }}
+          >
+            <p style={{ fontSize: "0.65rem", letterSpacing: "0.15em", color: "rgba(255,255,255,0.5)", marginBottom: "6px" }}>
+              TODAY'S OFFER
+            </p>
+            <p style={{ fontSize: "2rem", fontWeight: 900, color: "#F5C400", marginBottom: "4px" }}>
+              2回まで無料
+            </p>
+            <p style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.7)" }}>
+              （1〜2回で資産形成の方針は決まります）
+            </p>
+          </div>
+        </div>
+
+        {/* なぜ無料なのか？ — 相場の直下に配置 */}
+        <div style={{ paddingTop: "20px" }}>
+          <h3 style={{ fontSize: "1.1rem", fontWeight: 900, color: "#1B2A5E", textAlign: "center", marginBottom: "14px" }}>
+            なぜ無料なのか？
+          </h3>
+          <div style={{
+            background: "#fff",
+            borderRadius: "12px",
+            padding: "18px 16px",
+            border: "1px solid #E5E7EB",
+          }}>
+            <p style={{ fontSize: "0.95rem", fontWeight: 900, color: "#1B2A5E", textAlign: "center", marginBottom: "10px" }}>
+              <span style={{ color: "#ebc924" }}>瀧田潤税理士事務所</span> × <span style={{ color: "#149fff" }}>1級FP</span> コラボ企画
+            </p>
+            <p style={{ fontSize: "0.88rem", color: "#555", lineHeight: 1.7 }}>
+              勤務医の資産形成・税務支援に強みを持つ瀧田潤税理士事務所が長期目線で行うブランディング施策の一環として、実施しているプロジェクトのため無料です。
+            </p>
+            <div style={{ display: "flex", flexDirection: "column", gap: "8px", marginTop: "14px" }}>
+              {[
+                "特定の金融商品を勧めることは一切なし",
+                "王道のインデックス投資の使い方を中心に中立的に解説",
+                "安全資産の選択方法をロジカルにアドバイス",
+                "勤務医の収入・税務構造を熟知したFP＋税理士が対応",
+              ].map((text, i) => (
+                <div key={i} style={{ display: "flex", gap: "8px", alignItems: "flex-start" }}>
+                  <CheckCircle size={16} color="#059669" style={{ flexShrink: 0, marginTop: "2px" }} />
+                  <p style={{ fontSize: "0.88rem", color: "#333", lineHeight: 1.5 }}>{text}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
