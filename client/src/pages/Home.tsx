@@ -645,7 +645,7 @@ export default function Home() {
           background: "#DC2626", color: "#fff",
           borderRadius: "4px", letterSpacing: "0.02em", whiteSpace: "nowrap"
         }}>
-          6月限定先着15名
+          8月限定先着15名
         </span>
       </div>
 
