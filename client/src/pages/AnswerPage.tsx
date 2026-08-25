@@ -15,7 +15,10 @@ export default function AnswerPage() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    if (typeof (window as any).fbq === 'function') { (window as any).fbq('track', 'Lead'); }
+    if (typeof (window as any).fbq === 'function') {
+      (window as any).fbq('track', 'Lead');
+      (window as any).fbq('trackSingle', '852197147679166', 'CompleteRegistration');
+    }
     const params = new URLSearchParams(window.location.search);
     if (params.get("sent") !== "1") return;
     window.history.replaceState(null, "", window.location.pathname);
