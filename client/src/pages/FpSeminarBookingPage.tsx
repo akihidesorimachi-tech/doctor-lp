@@ -155,6 +155,9 @@ export default function FpSeminarBookingPage() {
           event_label: "fp_seminar_reservation",
         });
       }
+      if (typeof window !== "undefined" && typeof (window as any).fbq === "function") {
+        (window as any).fbq("trackSingle", "852197147679166", "CompleteRegistration");
+      }
 
       // 完了画面表示
       const confirmSection = document.getElementById("fp-seminar-confirm-section");

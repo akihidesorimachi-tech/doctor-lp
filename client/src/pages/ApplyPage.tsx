@@ -80,6 +80,9 @@ export default function ApplyPage() {
       setErrors(newErrors);
       return;
     }
+    if (typeof window !== "undefined" && typeof (window as any).fbq === "function") {
+      (window as any).fbq("trackSingle", "852197147679166", "CompleteRegistration");
+    }
     setSubmitted(true);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };

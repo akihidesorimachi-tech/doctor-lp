@@ -140,6 +140,9 @@ export default function BookingPage() {
           'event_label': 'fp_consultation'
         });
       }
+      if (typeof (window as any).fbq === 'function') {
+        (window as any).fbq('trackSingle', '852197147679166', 'CompleteRegistration');
+      }
       setStep("done");
       window.scrollTo(0, 0);
     } catch {
