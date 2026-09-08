@@ -263,36 +263,28 @@ function SurveyBlock({ answerPath, answerLabel, accentColor, navigate, q1, setQ1
       onClick={() => setLocalOpen(!localOpen)}
       style={{
         width: "100%",
-        background: localOpen ? "#F9FAFB" : "#fff",
-        color: "#1B2A5E",
-        border: `2px solid ${accentColor}`,
-        borderRadius: localOpen ? "12px 12px 0 0" : "12px",
-        padding: "14px 16px",
+        background: accentColor,
+        color: "#fff",
+        border: "none",
+        borderRadius: localOpen ? "10px 10px 0 0" : "10px",
+        padding: "16px",
+        fontWeight: 900,
+        fontSize: "1rem",
         cursor: "pointer",
         display: "flex",
         alignItems: "center",
-        gap: "14px",
-        boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-        transition: "border-radius 0.2s, background 0.2s",
+        justifyContent: "center",
+        gap: "8px",
+        boxShadow: `0 4px 14px ${accentColor}4D`,
+        transition: "border-radius 0.2s",
       }}
     >
-      <span style={{
-        width: "48px", height: "48px", borderRadius: "10px", flexShrink: 0,
-        background: accentColor, display: "flex", alignItems: "center", justifyContent: "center",
-      }}>
-        <User size={24} color="#fff" />
-      </span>
-      <span style={{ textAlign: "left", flex: 1, minWidth: 0 }}>
-        <span style={{ display: "block", fontSize: "1.05rem", fontWeight: 900, lineHeight: 1.3 }}>1級FPお試し相談(オンライン可)</span>
-        <span style={{ display: "block", fontSize: "0.85rem", fontWeight: 600, color: "#6B7280", marginTop: "3px" }}>FPの空き状況を確認する</span>
-      </span>
+      1級FPお試し相談
       <span style={{
         display: "inline-block",
-        flexShrink: 0,
         transition: "transform 0.3s",
         transform: localOpen ? "rotate(180deg)" : "rotate(0deg)",
-        fontSize: "1.3rem",
-        color: accentColor,
+        fontSize: "1rem",
       }}>▼</span>
     </button>
     {localOpen && (
@@ -2237,23 +2229,15 @@ export default function Home() {
               <button
                 onClick={() => navigate("/booking")}
                 style={{
-                  width: "100%", padding: "12px 16px", borderRadius: "12px", border: "none", cursor: "pointer",
+                  width: "100%", padding: "16px", borderRadius: "10px", border: "none", cursor: "pointer",
                   background: accentColor,
-                  boxShadow: "0 4px 14px rgba(0,0,0,0.28)",
-                  display: "flex", alignItems: "center", gap: "14px"
+                  color: "#fff", fontWeight: 900, fontSize: "1rem",
+                  boxShadow: `0 4px 14px ${accentColor}4D`,
+                  display: "flex", alignItems: "center", justifyContent: "center", gap: "8px"
                 }}
               >
-                <span style={{
-                  width: "44px", height: "44px", borderRadius: "10px", flexShrink: 0,
-                  background: "rgba(255,255,255,0.2)", display: "flex", alignItems: "center", justifyContent: "center",
-                }}>
-                  <User size={22} color="#fff" />
-                </span>
-                <div style={{ lineHeight: 1.3, textAlign: "left", flex: 1, minWidth: 0 }}>
-                  <div style={{ fontSize: "0.98rem", fontWeight: 900, color: "#fff" }}>1級FPお試し相談(オンライン可)</div>
-                  <div style={{ fontSize: "0.8rem", fontWeight: 600, color: "#FDE047", marginTop: "3px" }}>FPの空き状況を確認する</div>
-                </div>
-                <ChevronRight size={22} color="#fff" style={{ flexShrink: 0 }} />
+                1級FPお試し相談
+                <ChevronRight size={18} />
               </button>
             </div>
           </div>
