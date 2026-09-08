@@ -2167,13 +2167,13 @@ export default function Home() {
                 onClick={() => navigate("/booking")}
                 style={{
                   width: "100%", padding: "14px 16px", borderRadius: "10px", border: "none", cursor: "pointer",
-                  background: "#2563EB",
+                  background: "#F5C400",
                   color: "#fff",
-                  boxShadow: "0 4px 14px rgba(37,99,235,0.35)",
+                  boxShadow: "0 4px 14px rgba(245,196,0,0.35)",
                   display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "2px"
                 }}
               >
-                <span style={{ fontSize: "0.78rem", fontWeight: 700, color: "#DBEAFE" }}>1級FPお試し相談(オンライン可)</span>
+                <span style={{ fontSize: "0.78rem", fontWeight: 700, color: "rgba(255,255,255,0.85)" }}>1級FPお試し相談(オンライン可)</span>
                 <span style={{ display: "flex", alignItems: "center", gap: "8px", fontWeight: 900, fontSize: "1rem" }}>
                   FPの空き状況を確認する
                   <ChevronRight size={18} />
