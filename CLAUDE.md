@@ -1,0 +1,41 @@
+# Working rules for this repository
+
+## Scope discipline
+
+- Only change what was explicitly requested. Do not "improve," restyle, or refactor
+  anything nearby unless asked.
+- Before editing a component, check whether it is shared/reused elsewhere (e.g. via
+  Grep for its name or a distinctive prop). If a change would affect more than the
+  one place the user is looking at, **stop and tell them the full list of places
+  affected before making the change**. Do not assume they want all instances changed.
+- If a request is vague or open to interpretation (e.g. "make it look more like a
+  button," "improve the design"), do not guess silently. State the specific plan
+  (which file/lines, what will visually change) before editing, or ask.
+
+## Design/style changes specifically
+
+- For visual/design changes (as opposed to precise, literal text swaps), summarize
+  the intended change in plain language before committing, so the user can catch a
+  misunderstanding before it's pushed and deployed.
+- Reuse the site's existing, already-approved patterns (colors, shadows, button
+  styles) instead of inventing new ones. Search the codebase for a similar existing
+  element first (e.g. `grep -rn "boxShadow" client/src`) and match it, rather than
+  designing from scratch.
+
+## Git workflow
+
+- One logical change per commit. Keep commits small and easy to revert individually
+  — this repo has needed clean single-commit reverts before (`git revert <sha>`) and
+  that must stay possible.
+- Always run `pnpm run check`, `pnpm run build`, and `pnpm test` before committing.
+- Push after every commit unless told otherwise, so Railway's auto-deploy stays in
+  sync with what's discussed in chat.
+
+## Project context
+
+- Hosting: Railway (auto-deploys from the `claude/new-session-egsx6j` branch).
+  No Manus dependency remains in the app itself (no login/DB requirement).
+- Domain: `doctor.logicalfp.pro`, DNS managed via Manus's panel (backed by Global
+  Domain Group). DNS changes there can be slow/flaky to verify — confirm with actual
+  DNS queries, not just the panel's UI state, when troubleshooting.
+- Images live in `client/public/images/` and are referenced as `/images/<file>`.
