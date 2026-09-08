@@ -277,7 +277,10 @@ function SurveyBlock({ answerPath, answerLabel, accentColor, navigate, q1, setQ1
         transition: "border-radius 0.2s, background 0.2s",
       }}
     >
-      <span>1級FPお試し相談</span>
+      <span style={{ textAlign: "left" }}>
+        <span style={{ display: "block" }}>1級FPお試し相談(オンライン可)</span>
+        <span style={{ display: "block", fontSize: "0.78rem", fontWeight: 700, color: "#6B7280", marginTop: "2px" }}>FPの空き状況を確認する</span>
+      </span>
       <span style={{
         display: "inline-block",
         transition: "transform 0.3s",
@@ -2234,7 +2237,8 @@ export default function Home() {
                 }}
               >
                 <div style={{ lineHeight: 1.4 }}>
-                  1級FPお試し相談
+                  <div>1級FPお試し相談(オンライン可)</div>
+                  <div style={{ fontSize: "0.75rem", fontWeight: 700, color: "#E5E7EB" }}>FPの空き状況を確認する</div>
                 </div>
               </button>
             </div>
