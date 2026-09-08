@@ -246,16 +246,14 @@ function SurveyBlock({ answerPath, answerLabel, accentColor, navigate, q1, setQ1
   useEffect(() => { if (forceOpen) setLocalOpen(true); }, [forceOpen]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
-  const bankNum = parseInt(q2BankRatio || "0", 10) || 0;
-  const investNum = parseInt(q2InvestRatio || "0", 10) || 0;
-  const q2Total = bankNum + investNum;
-  const q2Valid = q2Total === 100;
+  const [q1OtherText, setQ1OtherText] = useState("");
+  const q1Valid = q1 !== "" && (q1 !== "その他" || q1OtherText.trim() !== "");
   const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   const [q3Occupation, setQ3Occupation] = useState<"doctor" | "other" | "">(q3Specialty.startsWith("other:") ? "other" : q3Specialty !== "" ? "doctor" : "");
   const [q3OtherText, setQ3OtherText] = useState(q3Specialty.startsWith("other:") ? q3Specialty.slice(6) : "");
   const [q3DoctorSpecialty, setQ3DoctorSpecialty] = useState(q3Specialty.startsWith("other:") ? "" : q3Specialty);
   const q3Valid = q3Occupation === "doctor" ? q3DoctorSpecialty !== "" : q3Occupation === "other" ? q3OtherText.trim() !== "" : false;
-  const isSurveyValid = q1 !== "" && q2Valid && q3Valid && emailValid;
+  const isSurveyValid = q1Valid && q3Valid && emailValid;
   return (
   <div id="survey-block" data-survey-open={localOpen ? 'true' : 'false'} style={{ padding: "0 16px 24px" }}>
     {/* アンケートに回答して答えを見る（アコーディオン風トリガー） */}
@@ -315,82 +313,25 @@ function SurveyBlock({ answerPath, answerLabel, accentColor, navigate, q1, setQ1
             <option value="バランス良くどちらも">バランス良くどちらも</option>
             <option value="その他">その他</option>
           </select>
-        </div>
-
-        {/* Q2 */}
-        <div style={{ marginBottom: "20px" }}>
-          <p style={{ fontSize: "0.88rem", fontWeight: 700, color: "#1B2A5E", marginBottom: "4px" }}>
-            質問 2　年間貯蓄額の銀行預金と金融商品の割合は？ <span style={{ color: "#DC2626" }}>*</span>
-          </p>
-          {/* 上段：ラベル横並び */}
-          <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "6px" }}>
-            <span style={{ fontSize: "0.82rem", color: "#374151", fontWeight: 700, flex: 1, textAlign: "center" }}>銀行預金</span>
-            <span style={{ fontSize: "0.9rem", color: "#9CA3AF", fontWeight: 700 }}>：</span>
-            <span style={{ fontSize: "0.82rem", color: "#374151", fontWeight: 700, flex: 1, textAlign: "center" }}>金融商品</span>
-          </div>
-          {/* 下段：入力欄横並び */}
-          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-            <div style={{ display: "flex", alignItems: "center", gap: "4px", flex: 1, justifyContent: "center" }}>
-              <input
-                type="number"
-                min="0"
-                max="100"
-                placeholder="0"
-                value={q2BankRatio}
-                onChange={(e) => {
-                  const v = e.target.value;
-                  setQ2BankRatio(v);
-                  const bank = parseInt(v || "0", 10) || 0;
-                  const remain = 100 - bank;
-                  if (remain >= 0 && remain <= 100) setQ2InvestRatio(String(remain));
-                }}
-                style={{ width: "72px", padding: "8px 10px", borderRadius: "6px", border: "1.5px solid #D1D5DB", fontSize: "0.88rem", textAlign: "right" }}
-              />
-              <span style={{ fontSize: "0.88rem", color: "#6B7280" }}>%</span>
-            </div>
-            <span style={{ fontSize: "0.9rem", color: "#9CA3AF", fontWeight: 700 }}>：</span>
-            <div style={{ display: "flex", alignItems: "center", gap: "4px", flex: 1, justifyContent: "center" }}>
-              <input
-                type="number"
-                min="0"
-                max="100"
-                placeholder="0"
-                value={q2InvestRatio}
-                onChange={(e) => {
-                  const v = e.target.value;
-                  setQ2InvestRatio(v);
-                  const invest = parseInt(v || "0", 10) || 0;
-                  const remain = 100 - invest;
-                  if (remain >= 0 && remain <= 100) setQ2BankRatio(String(remain));
-                }}
-                style={{ width: "72px", padding: "8px 10px", borderRadius: "6px", border: "1.5px solid #D1D5DB", fontSize: "0.88rem", textAlign: "right" }}
-              />
-              <span style={{ fontSize: "0.88rem", color: "#6B7280" }}>%</span>
-            </div>
-          </div>
-          {/* 合計表示 */}
-          {(q2BankRatio !== "" || q2InvestRatio !== "") && (
-            <div style={{
-              display: "flex", justifyContent: "flex-end", alignItems: "center",
-              gap: "6px", marginTop: "8px", padding: "6px 8px",
-              borderRadius: "6px",
-              background: q2Total === 100 ? "#DCFCE7" : q2Total > 100 ? "#FEE2E2" : "#FEF9C3",
-            }}>
-              <span style={{ fontSize: "0.8rem", color: "#6B7280" }}>合計</span>
-              <span style={{
-                fontSize: "1rem", fontWeight: 900,
-                color: q2Total === 100 ? "#16A34A" : q2Total > 100 ? "#DC2626" : "#B45309",
-              }}>{q2Total}%</span>
-              {q2Total === 100 && <span style={{ fontSize: "0.8rem", color: "#16A34A" }}>✓ OK</span>}
-              {q2Total !== 100 && <span style={{ fontSize: "0.78rem", color: q2Total > 100 ? "#DC2626" : "#B45309" }}>（残り{100 - q2Total}%）</span>}
-            </div>
+          {q1 === "その他" && (
+            <input
+              type="text"
+              placeholder="内容を入力してください"
+              value={q1OtherText}
+              onChange={(e) => setQ1OtherText(e.target.value)}
+              style={{
+                width: "100%", padding: "10px 12px", borderRadius: "8px",
+                border: "1.5px solid #D1D5DB", fontSize: "0.88rem", color: "#111827",
+                background: "#fff", boxSizing: "border-box", marginTop: "8px",
+              }}
+            />
           )}
         </div>
 
         {/* Q3 職業 */}
         <div style={{ marginBottom: "18px" }}>
           <p style={{ fontSize: "0.88rem", fontWeight: 700, color: "#1B2A5E", marginBottom: "8px" }}>
-            質問 3　職業は？ <span style={{ color: "#DC2626" }}>*</span>
+            質問 2　職業は？ <span style={{ color: "#DC2626" }}>*</span>
           </p>
           {/* 医師 / それ以外 の二択ボタン */}
           <div style={{ display: "flex", gap: "10px", marginBottom: "12px" }}>
@@ -500,9 +441,7 @@ function SurveyBlock({ answerPath, answerLabel, accentColor, navigate, q1, setQ1
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({
                 level: answerLabel,
-                q1,
-                q2Bank: q2BankRatio,
-                q2Invest: q2InvestRatio,
+                q1: q1 === "その他" ? `その他: ${q1OtherText}` : q1,
                 q3: q3Specialty,
                 email,
               }),
@@ -525,7 +464,7 @@ function SurveyBlock({ answerPath, answerLabel, accentColor, navigate, q1, setQ1
         )}
         {!isSurveyValid && (
           <p style={{ fontSize: "0.75rem", color: "#9CA3AF", textAlign: "center", marginTop: "6px" }}>
-            {q1 === "" ? "質問1を選択してください" : !q2Valid ? `割合の合計が${q2Total}%です。合計100%になるよう入力してください` : !q3Valid ? (q3Occupation === "" ? "質問3（職業）を選択してください" : q3Occupation === "doctor" ? "専門科を選択してください" : "職業を入力してください") : !emailValid ? "メールアドレスを正しく入力してください" : ""}
+            {q1 === "" ? "質問1を選択してください" : !q1Valid ? "質問1の内容を入力してください" : !q3Valid ? (q3Occupation === "" ? "質問2（職業）を選択してください" : q3Occupation === "doctor" ? "専門科を選択してください" : "職業を入力してください") : !emailValid ? "メールアドレスを正しく入力してください" : ""}
           </p>
         )}
       </div>
