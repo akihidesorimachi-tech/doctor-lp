@@ -263,27 +263,31 @@ function SurveyBlock({ answerPath, answerLabel, accentColor, navigate, q1, setQ1
       onClick={() => setLocalOpen(!localOpen)}
       style={{
         width: "100%",
-        background: localOpen ? "#F9FAFB" : "#fff",
-        color: "#1B2A5E",
-        border: `2px solid ${accentColor}`,
+        background: "#2563EB",
+        color: "#fff",
+        border: "none",
         borderRadius: localOpen ? "10px 10px 0 0" : "10px",
         padding: "14px 16px",
-        fontSize: "0.95rem",
-        fontWeight: 900,
         cursor: "pointer",
         display: "flex",
+        flexDirection: "column",
         alignItems: "center",
-        justifyContent: "space-between",
-        transition: "border-radius 0.2s, background 0.2s",
+        justifyContent: "center",
+        gap: "2px",
+        boxShadow: "0 4px 14px rgba(37,99,235,0.35)",
+        transition: "border-radius 0.2s",
       }}
     >
-      <span>アンケートに回答して<span style={{ color: accentColor, fontWeight: 900 }}>答え</span>と<br /><span style={{ color: accentColor, fontWeight: 900 }}>お試し相談クーポン</span>を入手</span>
-      <span style={{
-        display: "inline-block",
-        transition: "transform 0.3s",
-        transform: localOpen ? "rotate(180deg)" : "rotate(0deg)",
-        fontSize: "1.1rem",
-      }}>▼</span>
+      <span style={{ fontSize: "0.78rem", fontWeight: 700, color: "#DBEAFE" }}>1級FPお試し相談(オンライン可)</span>
+      <span style={{ display: "flex", alignItems: "center", gap: "8px", fontWeight: 900, fontSize: "1rem" }}>
+        FPの空き状況を確認する
+        <span style={{
+          display: "inline-block",
+          transition: "transform 0.3s",
+          transform: localOpen ? "rotate(180deg)" : "rotate(0deg)",
+          fontSize: "1rem",
+        }}>▼</span>
+      </span>
     </button>
     {localOpen && (
       <div style={{
@@ -2068,7 +2072,7 @@ export default function Home() {
         };
         const lvInfo = activeLevel ? levelAnswerMap[activeLevel] : null;
         // レベル未選択 or スクロール前は非表示
-        const visible = showFixedCta && !!lvInfo;
+        const visible = showFixedCta;
         const accentColor = lvInfo?.color || "#1B2A5E";
         // アンケートバリデーション
         const bankNum = parseInt(surveyQ2BankRatio || "0", 10) || 0;
@@ -2225,28 +2229,20 @@ export default function Home() {
             {/* ボタンバー */}
             <div style={{ padding: "7px 16px", maxWidth: "480px", margin: "0 auto" }}>
               <button
-                onClick={() => {
-                  setForceOpenSurvey(false);
-                  setTimeout(() => {
-                    setForceOpenSurvey(true);
-                    const el = document.getElementById('survey-block');
-                    if (el) {
-                      const top = el.getBoundingClientRect().top + window.scrollY - 80;
-                      window.scrollTo({ top, behavior: 'smooth' });
-                    }
-                  }, 0);
-                }}
+                onClick={() => navigate("/booking")}
                 style={{
-                  width: "100%", padding: "10px", borderRadius: "8px", border: "none", cursor: "pointer",
-                  background: accentColor,
-                  color: "#fff", fontWeight: 900, fontSize: "0.88rem",
-                  display: "flex", alignItems: "center", justifyContent: "center", gap: "6px"
+                  width: "100%", padding: "14px 16px", borderRadius: "10px", border: "none", cursor: "pointer",
+                  background: "#2563EB",
+                  color: "#fff",
+                  boxShadow: "0 4px 14px rgba(37,99,235,0.35)",
+                  display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "2px"
                 }}
               >
-                <div style={{ lineHeight: 1.4 }}>
-                  <div>アンケートに回答して<span style={{ color: "#FDE047", fontWeight: 900 }}>答え</span>と</div>
-                  <div><span style={{ color: "#FDE047", fontWeight: 900 }}>お試し相談クーポン</span>を入手</div>
-                </div>
+                <span style={{ fontSize: "0.78rem", fontWeight: 700, color: "#DBEAFE" }}>1級FPお試し相談(オンライン可)</span>
+                <span style={{ display: "flex", alignItems: "center", gap: "8px", fontWeight: 900, fontSize: "1rem" }}>
+                  FPの空き状況を確認する
+                  <ChevronRight size={18} />
+                </span>
               </button>
             </div>
           </div>
