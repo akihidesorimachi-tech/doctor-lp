@@ -263,29 +263,31 @@ function SurveyBlock({ answerPath, answerLabel, accentColor, navigate, q1, setQ1
       onClick={() => setLocalOpen(!localOpen)}
       style={{
         width: "100%",
-        background: accentColor,
+        background: "#1B2A5E",
         color: "#fff",
         border: "none",
         borderRadius: localOpen ? "10px 10px 0 0" : "10px",
-        padding: "16px",
-        fontWeight: 900,
-        fontSize: "1rem",
+        padding: "14px 16px",
         cursor: "pointer",
         display: "flex",
+        flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        gap: "8px",
-        boxShadow: `0 4px 14px ${accentColor}4D`,
+        gap: "2px",
+        boxShadow: "0 4px 14px rgba(27,42,94,0.3)",
         transition: "border-radius 0.2s",
       }}
     >
-      1級FPお試し相談
-      <span style={{
-        display: "inline-block",
-        transition: "transform 0.3s",
-        transform: localOpen ? "rotate(180deg)" : "rotate(0deg)",
-        fontSize: "1rem",
-      }}>▼</span>
+      <span style={{ fontSize: "0.78rem", fontWeight: 700, color: "#BFD3FF" }}>1級FPお試し相談(オンライン可)</span>
+      <span style={{ display: "flex", alignItems: "center", gap: "8px", fontWeight: 900, fontSize: "1rem" }}>
+        FPの空き状況を確認する
+        <span style={{
+          display: "inline-block",
+          transition: "transform 0.3s",
+          transform: localOpen ? "rotate(180deg)" : "rotate(0deg)",
+          fontSize: "1rem",
+        }}>▼</span>
+      </span>
     </button>
     {localOpen && (
       <div style={{
@@ -2229,15 +2231,18 @@ export default function Home() {
               <button
                 onClick={() => navigate("/booking")}
                 style={{
-                  width: "100%", padding: "16px", borderRadius: "10px", border: "none", cursor: "pointer",
-                  background: accentColor,
-                  color: "#fff", fontWeight: 900, fontSize: "1rem",
-                  boxShadow: `0 4px 14px ${accentColor}4D`,
-                  display: "flex", alignItems: "center", justifyContent: "center", gap: "8px"
+                  width: "100%", padding: "14px 16px", borderRadius: "10px", border: "none", cursor: "pointer",
+                  background: "#1B2A5E",
+                  color: "#fff",
+                  boxShadow: "0 4px 14px rgba(27,42,94,0.3)",
+                  display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "2px"
                 }}
               >
-                1級FPお試し相談
-                <ChevronRight size={18} />
+                <span style={{ fontSize: "0.78rem", fontWeight: 700, color: "#BFD3FF" }}>1級FPお試し相談(オンライン可)</span>
+                <span style={{ display: "flex", alignItems: "center", gap: "8px", fontWeight: 900, fontSize: "1rem" }}>
+                  FPの空き状況を確認する
+                  <ChevronRight size={18} />
+                </span>
               </button>
             </div>
           </div>
