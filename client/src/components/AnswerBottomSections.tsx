@@ -63,7 +63,7 @@ const applyOptions = [
   {
     id: "fp-individual",
     Icon: User,
-    title: "1級FP無料相談(オンライン可)",
+    title: "1級FPお試し相談(オンライン可)",
     desc: "FPの空き状況を確認する",
     sub: "30分～延長可 ・ 21時以降も対応可",
     color: "#1B2A5E",
@@ -463,7 +463,7 @@ export default function AnswerBottomSections() {
       <section style={{ background: "#fff", padding: "36px 16px" }} id="apply-section">
         <div style={{ maxWidth: "480px", margin: "0 auto" }}>
           <h2 style={{ fontSize: "1.25rem", fontWeight: 900, color: "#1B2A5E", marginBottom: "6px" }}>
-            無料相談に申し込む
+            お試し相談に申し込む
           </h2>
           <p style={{ fontSize: "0.92rem", color: "#555", marginBottom: "6px" }}>
             ご希望をお選びください
