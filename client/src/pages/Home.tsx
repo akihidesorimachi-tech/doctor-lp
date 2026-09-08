@@ -277,7 +277,7 @@ function SurveyBlock({ answerPath, answerLabel, accentColor, navigate, q1, setQ1
         transition: "border-radius 0.2s, background 0.2s",
       }}
     >
-      <span>アンケートに回答して<span style={{ color: accentColor, fontWeight: 900 }}>答え</span>と<br /><span style={{ color: accentColor, fontWeight: 900 }}>お試し相談クーポン</span>を入手</span>
+      <span>1級FPお試し相談</span>
       <span style={{
         display: "inline-block",
         transition: "transform 0.3s",
@@ -2068,7 +2068,7 @@ export default function Home() {
         };
         const lvInfo = activeLevel ? levelAnswerMap[activeLevel] : null;
         // レベル未選択 or スクロール前は非表示
-        const visible = showFixedCta && !!lvInfo;
+        const visible = showFixedCta;
         const accentColor = lvInfo?.color || "#1B2A5E";
         // アンケートバリデーション
         const bankNum = parseInt(surveyQ2BankRatio || "0", 10) || 0;
