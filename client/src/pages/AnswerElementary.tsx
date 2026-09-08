@@ -61,7 +61,7 @@ export default function AnswerElementary() {
               </div>
               <div style={{ flex: 1 }}>
                 <p style={{ margin: "0 0 4px", fontWeight: 900, fontSize: "0.9rem", color: "#F5C400" }}>
-                  メールに答えと無料相談クーポンをお送りしました
+                  メールに答えとお試し相談クーポンをお送りしました
                 </p>
                 <p style={{ margin: 0, fontSize: "0.78rem", color: "#CBD5E1", lineHeight: 1.5 }}>
                   届かない場合は迷惑メールフォルダもご確認ください
@@ -134,7 +134,7 @@ export default function AnswerElementary() {
             勤務医限定
           </span>
           <span style={{ fontSize: "0.82rem", fontWeight: 900, padding: "4px 10px", border: "2px solid #1B2A5E", borderRadius: "4px", color: "#1B2A5E", background: "#fff" }}>
-            無料FP相談
+            お試しFP相談
           </span>
         </div>
         <span style={{ fontSize: "0.82rem", fontWeight: 900, padding: "4px 10px", background: "#DC2626", color: "#fff", borderRadius: "4px", letterSpacing: "0.03em" }}>
@@ -334,7 +334,7 @@ export default function AnswerElementary() {
             borderRadius: "10px", padding: "16px", textAlign: "center", marginBottom: "4px"
           }}>
             <p style={{ fontSize: "0.95rem", color: "#1B2A5E", fontWeight: 900, lineHeight: 1.8, marginBottom: "14px" }}>
-              必要額の試算・積立額の最適化・<br />適切なインデックスの選択など<br /><span style={{ color: "#DC2626", fontSize: "1.05rem" }}>「1級FPとの無料相談」</span>で解決できます
+              必要額の試算・積立額の最適化・<br />適切なインデックスの選択など<br /><span style={{ color: "#DC2626", fontSize: "1.05rem" }}>「1級FPとのお試し相談」</span>で解決できます
             </p>
             <button
               onClick={() => navigate("/#consultation")}

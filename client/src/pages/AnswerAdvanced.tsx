@@ -61,7 +61,7 @@ export default function AnswerAdvanced() {
               </div>
               <div style={{ flex: 1 }}>
                 <p style={{ margin: "0 0 4px", fontWeight: 900, fontSize: "0.9rem", color: "#F5C400" }}>
-                  メールに答えと無料相談クーポンをお送りしました
+                  メールに答えとお試し相談クーポンをお送りしました
                 </p>
                 <p style={{ margin: 0, fontSize: "0.78rem", color: "#CBD5E1", lineHeight: 1.5 }}>
                   届かない場合は迷惑メールフォルダもご確認ください
@@ -134,7 +134,7 @@ export default function AnswerAdvanced() {
             勤務医限定
           </span>
           <span style={{ fontSize: "0.82rem", fontWeight: 900, padding: "4px 10px", border: "2px solid #1B2A5E", borderRadius: "4px", color: "#1B2A5E", background: "#fff" }}>
-            無料FP相談
+            お試しFP相談
           </span>
         </div>
         <span style={{ fontSize: "0.82rem", fontWeight: 900, padding: "4px 10px", background: "#DC2626", color: "#fff", borderRadius: "4px", letterSpacing: "0.03em" }}>
@@ -331,7 +331,7 @@ export default function AnswerAdvanced() {
               「何を参考にすれば良いかわからない」という方には、担当1級FP自身のポートフォリオ構成をそのままお見せします。実際に自分のお金を運用しているFPが、どんな比率・商品で組んでいるかを知ることは、最も実践的な参考情報のひとつです。
             </p>
             <div style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.15)", borderRadius: "8px", padding: "12px 14px", marginBottom: "14px" }}>
-              <p style={{ fontSize: "0.82rem", fontWeight: 900, color: "#F5C400", margin: "0 0 8px" }}>無料相談でお伝えできること</p>
+              <p style={{ fontSize: "0.82rem", fontWeight: 900, color: "#F5C400", margin: "0 0 8px" }}>お試し相談でお伝えできること</p>
               {[
                 "1級FP自身のポートフォリオ比率（リスク資産・安全資産の内訳）",
                 "FANG+などハイボラ商品の取り入れ方と比率",
