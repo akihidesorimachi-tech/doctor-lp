@@ -2225,17 +2225,7 @@ export default function Home() {
             {/* ボタンバー */}
             <div style={{ padding: "7px 16px", maxWidth: "480px", margin: "0 auto" }}>
               <button
-                onClick={() => {
-                  setForceOpenSurvey(false);
-                  setTimeout(() => {
-                    setForceOpenSurvey(true);
-                    const el = document.getElementById('survey-block');
-                    if (el) {
-                      const top = el.getBoundingClientRect().top + window.scrollY - 80;
-                      window.scrollTo({ top, behavior: 'smooth' });
-                    }
-                  }, 0);
-                }}
+                onClick={() => navigate("/booking")}
                 style={{
                   width: "100%", padding: "10px", borderRadius: "8px", border: "none", cursor: "pointer",
                   background: accentColor,
@@ -2244,8 +2234,7 @@ export default function Home() {
                 }}
               >
                 <div style={{ lineHeight: 1.4 }}>
-                  <div>アンケートに回答して<span style={{ color: "#FDE047", fontWeight: 900 }}>答え</span>と</div>
-                  <div><span style={{ color: "#FDE047", fontWeight: 900 }}>お試し相談クーポン</span>を入手</div>
+                  1級FPお試し相談
                 </div>
               </button>
             </div>
