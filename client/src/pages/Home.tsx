@@ -261,31 +261,27 @@ function SurveyBlock({ answerPath, answerLabel, accentColor, navigate, q1, setQ1
       onClick={() => setLocalOpen(!localOpen)}
       style={{
         width: "100%",
-        background: "#2563EB",
-        color: "#fff",
-        border: "none",
+        background: localOpen ? "#F9FAFB" : "#fff",
+        color: "#1B2A5E",
+        border: `2px solid ${accentColor}`,
         borderRadius: localOpen ? "10px 10px 0 0" : "10px",
         padding: "14px 16px",
+        fontSize: "0.95rem",
+        fontWeight: 900,
         cursor: "pointer",
         display: "flex",
-        flexDirection: "column",
         alignItems: "center",
-        justifyContent: "center",
-        gap: "2px",
-        boxShadow: "0 4px 14px rgba(37,99,235,0.35)",
-        transition: "border-radius 0.2s",
+        justifyContent: "space-between",
+        transition: "border-radius 0.2s, background 0.2s",
       }}
     >
-      <span style={{ fontSize: "0.78rem", fontWeight: 700, color: "#DBEAFE" }}>1級FPお試し相談(オンライン可)</span>
-      <span style={{ display: "flex", alignItems: "center", gap: "8px", fontWeight: 900, fontSize: "1rem" }}>
-        FPの空き状況を確認する
-        <span style={{
-          display: "inline-block",
-          transition: "transform 0.3s",
-          transform: localOpen ? "rotate(180deg)" : "rotate(0deg)",
-          fontSize: "1rem",
-        }}>▼</span>
-      </span>
+      <span>アンケートに回答して<span style={{ color: accentColor, fontWeight: 900 }}>答え</span>と<br /><span style={{ color: accentColor, fontWeight: 900 }}>お試し相談クーポン</span>を入手</span>
+      <span style={{
+        display: "inline-block",
+        transition: "transform 0.3s",
+        transform: localOpen ? "rotate(180deg)" : "rotate(0deg)",
+        fontSize: "1.1rem",
+      }}>▼</span>
     </button>
     {localOpen && (
       <div style={{
