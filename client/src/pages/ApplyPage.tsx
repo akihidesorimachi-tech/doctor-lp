@@ -171,7 +171,7 @@ export default function ApplyPage() {
             display: "inline-block", marginBottom: "8px"
           }}>完全無料</span>
           <h1 style={{ fontWeight: 900, color: "#1B2A5E", fontSize: "1.3rem" }}>
-            お試し相談に申し込む
+            無料相談に申し込む
           </h1>
           <p style={{ color: "#666", fontSize: "0.75rem", marginTop: "4px" }}>
             ご希望の形式をお選びください ・ 週5名限定
@@ -362,7 +362,7 @@ export default function ApplyPage() {
                 boxShadow: "0 4px 16px rgba(201,168,76,0.4)"
               }}
             >
-              お試し相談に申し込む
+              無料相談に申し込む
             </button>
 
             <p style={{ color: "#999", fontSize: "0.72rem", textAlign: "center" }}>

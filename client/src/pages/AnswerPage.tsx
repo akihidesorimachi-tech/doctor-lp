@@ -66,7 +66,7 @@ export default function AnswerPage() {
               </div>
               <div style={{ flex: 1 }}>
                 <p style={{ margin: "0 0 4px", fontWeight: 900, fontSize: "0.9rem", color: "#F5C400" }}>
-                  メールに答えとお試し相談クーポンをお送りしました
+                  メールに答えと無料相談クーポンをお送りしました
                 </p>
                 <p style={{ margin: 0, fontSize: "0.78rem", color: "#CBD5E1", lineHeight: 1.5 }}>
                   届かない場合は迷惑メールフォルダもご確認ください
@@ -145,7 +145,7 @@ export default function AnswerPage() {
             fontSize: "0.82rem", fontWeight: 900, padding: "4px 10px",
             border: "2px solid #1B2A5E", borderRadius: "4px", color: "#1B2A5E", background: "#fff"
           }}>
-            お試し相談
+            無料FP相談
           </span>
         </div>
         <span style={{
@@ -245,7 +245,7 @@ export default function AnswerPage() {
             borderRadius: "10px", padding: "16px", textAlign: "center", marginBottom: "4px"
           }}>
             <p style={{ fontSize: "0.95rem", color: "#1B2A5E", fontWeight: 900, lineHeight: 1.8, marginBottom: "14px" }}>
-              ポートフォリオの最適化や<br />積立のシミュレーションは<br /><span style={{ color: "#DC2626", fontSize: "1.05rem" }}>「1級FPとのお試し相談」</span>で解決できます
+              ポートフォリオの最適化や<br />積立のシミュレーションは<br /><span style={{ color: "#DC2626", fontSize: "1.05rem" }}>「1級FPとの無料相談」</span>で解決できます
             </p>
             <button
               onClick={() => navigate('/booking')}

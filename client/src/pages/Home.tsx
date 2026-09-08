@@ -70,7 +70,7 @@ const levels = [
     content: {
       headline: "初心者の方へ",
       subheadline: "「何かしなきゃ」と思いつつ、手をつけられていない方",
-      ctaText: "具体的な始め方・金額設定は1級FPへのお試し相談で解決できます",
+      ctaText: "具体的な始め方・金額設定は1級FPへの無料相談で解決できます",
       points: [
         { num: "01", title: "インフレ時代、銀行預金だけでは危険", desc: "インフレ（物価上昇）に対して現預金の価値は目減りし続けます。高収入であってもインフレ次第では老後に資産が枯渇する可能性は十分にあります。" },
         { num: "02", title: "まずはNISAでインデックス投資から", desc: "投資はNISA枠でインデックス投資が正解と言われています。インデックス投資とは何か、毎月いくらくらい積み立てた方が良いのか、初心者にも丁寧にロジカルに解説します。" },
@@ -108,7 +108,7 @@ const levels = [
     content: {
       headline: "中級の方へ",
       subheadline: "貯蓄のほとんどをインデックス投資に回している方",
-      ctaText: "ポートフォリオの最適化は1級FPとのお試し相談で",
+      ctaText: "ポートフォリオの最適化は1級FPとの無料相談で",
       points: [
         { num: "01", title: "オルカン・S&P500は「安全」ではない", desc: "S&P500は以下のように何度も暴落を繰り返しています。個別株よりは低リスクではあるものの、カテゴリとしてはリスク資産です。", bullets: ["ITバブル崩壊：約49%下落（回復に7年）", "リーマンショック：56%下落（回復に6年）"] },
         { num: "02", title: "暴落時に大きな出費が重なったら？", desc: "住宅購入・子どもの教育費・転職など、人生の大きなイベントが暴落と重なった場合、リスク資産だけでは対応できません。" },
@@ -128,7 +128,7 @@ const levels = [
     content: {
       headline: "上級の方へ",
       subheadline: "FANG+や個別株・債券なども保有している方",
-      ctaText: "ポートフォリオの最適化は1級FPとのお試し相談で",
+      ctaText: "ポートフォリオの最適化は1級FPとの無料相談で",
       points: [
         { num: "01", title: "しっかり取り組んでいる、素晴らしい！", desc: "ここまで自分で考えて行動できている方は少数です。その姿勢は本業にも活きているはずです。" },
         { num: "02", title: "お金のことを考えすぎると本業に影響も", desc: "本業で最大のパフォーマンスを発揮するためにも、資産管理に使う認知リソースは最小化すべきです。" },
@@ -162,7 +162,7 @@ const applyOptions = [
   {
     id: "fp-individual",
     Icon: User,
-    title: "1級FPお試し相談(オンライン可)",
+    title: "1級FP無料相談(オンライン可)",
     desc: "FPの空き状況を確認する",
     sub: "30分～延長可 ・ 21時以降も対応可",
     color: "#1B2A5E",
@@ -277,7 +277,7 @@ function SurveyBlock({ answerPath, answerLabel, accentColor, navigate, q1, setQ1
         transition: "border-radius 0.2s, background 0.2s",
       }}
     >
-      <span>アンケートに回答して<span style={{ color: accentColor, fontWeight: 900 }}>答え</span>と<br /><span style={{ color: accentColor, fontWeight: 900 }}>お試し相談クーポン</span>を入手</span>
+      <span>アンケートに回答して<span style={{ color: accentColor, fontWeight: 900 }}>答え</span>と<br /><span style={{ color: accentColor, fontWeight: 900 }}>無料相談クーポン</span>を入手</span>
       <span style={{
         display: "inline-block",
         transition: "transform 0.3s",
@@ -480,7 +480,7 @@ function SurveyBlock({ answerPath, answerLabel, accentColor, navigate, q1, setQ1
             }}
           />
           <p style={{ fontSize: "0.75rem", color: "#6B7280", marginTop: "6px", lineHeight: 1.6 }}>
-            🎁 キャンペーン終了後も有効なお試し相談クーポンをお送りします。
+            🎁 キャンペーン終了後も有効な無料相談クーポンをお送りします。
           </p>
         </div>
         {/* 答えを見るボタン */}
@@ -637,7 +637,7 @@ export default function Home() {
             border: "2px solid #1B2A5E", borderRadius: "4px", color: "#1B2A5E", background: "#fff",
             whiteSpace: "nowrap"
           }}>
-            お試し相談
+            無料FP相談
           </span>
         </div>
         <span style={{
@@ -1907,7 +1907,7 @@ export default function Home() {
       <section style={{ background: "#fff", padding: "36px 16px" }} id="apply-section">
         <div style={{ maxWidth: "480px", margin: "0 auto" }}>
           <h2 style={{ fontSize: "1.25rem", fontWeight: 900, color: "#1B2A5E", marginBottom: "6px" }}>
-            お試し相談に申し込む
+            無料相談に申し込む
           </h2>
           <p style={{ fontSize: "0.92rem", color: "#555", marginBottom: "6px" }}>
             ご希望をお選びください
@@ -2199,7 +2199,7 @@ export default function Home() {
                   <p style={{ fontSize: "0.85rem", fontWeight: 700, color: "#1B2A5E", marginBottom: "4px" }}>答え送付先 <span style={{ color: "#DC2626" }}>*</span></p>
                   <input type="email" placeholder="example@email.com" value={surveyEmail} onChange={(e) => setSurveyEmail(e.target.value)}
                     style={{ width: "100%", padding: "9px 10px", borderRadius: "8px", border: `1.5px solid ${emailValid && surveyEmail !== "" ? "#16A34A" : "#D1D5DB"}`, fontSize: "0.85rem", color: "#111827", background: "#fff", boxSizing: "border-box" }} />
-                  <p style={{ fontSize: "0.73rem", color: "#6B7280", marginTop: "5px", lineHeight: 1.5 }}>🎁 キャンペーン終了後も有効なお試し相談クーポンをお送りします。</p>
+                  <p style={{ fontSize: "0.73rem", color: "#6B7280", marginTop: "5px", lineHeight: 1.5 }}>🎁 キャンペーン終了後も有効な無料相談クーポンをお送りします。</p>
                 </div>
                 {/* 送信ボタン */}
                 <button
@@ -2245,7 +2245,7 @@ export default function Home() {
               >
                 <div style={{ lineHeight: 1.4 }}>
                   <div>アンケートに回答して<span style={{ color: "#FDE047", fontWeight: 900 }}>答え</span>と</div>
-                  <div><span style={{ color: "#FDE047", fontWeight: 900 }}>お試し相談クーポン</span>を入手</div>
+                  <div><span style={{ color: "#FDE047", fontWeight: 900 }}>無料相談クーポン</span>を入手</div>
                 </div>
               </button>
             </div>

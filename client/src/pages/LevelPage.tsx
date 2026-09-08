@@ -6,7 +6,7 @@
  * セクション順序：
  * 1. ヘッダー（戻るボタン + powered by）
  * 2. レベル別コンテンツ（ポイント3つ）
- * 3. CTA（お試し相談に申し込む）
+ * 3. CTA（無料相談に申し込む）
  * 4. 申し込みフォーム選択
  * 5. フッター
  */
@@ -69,7 +69,7 @@ const levelContents: Record<string, LevelContent> = {
     accentColor: "#2563EB",
     borderColor: "#2563EB",
     headline: "インフレ時代、\n銀行預金だけでは危険",
-    subheadline: "具体的な始め方・金額設定は\n1級FPへのお試し相談で解決できます",
+    subheadline: "具体的な始め方・金額設定は\n1級FPへの無料相談で解決できます",
     points: [
       {
         Icon: AlertTriangle, iconColor: "#D97706",
@@ -276,7 +276,7 @@ export default function LevelPage() {
             padding: "10px 14px", backdropFilter: "blur(4px)"
           }}>
             <p style={{ color: "rgba(255,255,255,0.9)", fontSize: "0.78rem", lineHeight: 1.6 }}>
-              あなたの現状に合わせた情報をご覧ください。最後にお試し相談の申し込みフォームへご案内します。
+              あなたの現状に合わせた情報をご覧ください。最後に無料相談の申し込みフォームへご案内します。
             </p>
           </div>
         </div>
@@ -342,7 +342,7 @@ export default function LevelPage() {
       <section style={{ background: "#fff", padding: "28px 16px" }} id="apply-section">
         <div style={{ maxWidth: "480px", margin: "0 auto" }}>
           <h2 style={{ fontSize: "1.15rem", fontWeight: 900, color: "#1B2A5E", textAlign: "center", marginBottom: "6px" }}>
-            お試し相談に申し込む
+            無料相談に申し込む
           </h2>
           <p style={{ fontSize: "0.78rem", color: "#555", textAlign: "center", marginBottom: "6px" }}>
             ご希望の形式をお選びください
@@ -444,7 +444,7 @@ export default function LevelPage() {
               display: "flex", alignItems: "center", justifyContent: "center", gap: "6px"
             }}
           >
-            お試し相談に申し込む（完全無料）
+            無料相談に申し込む（完全無料）
           </button>
         </div>
       </div>
