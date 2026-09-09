@@ -590,7 +590,7 @@ export default function Home() {
             {/* 吹き出し＋矢印 */}
             <div style={{ textAlign: "center", marginBottom: "10px" }}>
               <p style={{ fontSize: "0.9rem", fontWeight: 700, color: "#374151", margin: "0 0 10px", letterSpacing: "0em", lineHeight: 1.6 }}>
-                <span style={{ color: "#2563EB", fontWeight: 900 }}>アンケート回答</span>or<span style={{ color: "#38BDF8", fontWeight: 900 }}>お試しFP相談申込</span>で<br />
+                <span style={{ color: "#2563EB", fontWeight: 900 }}>アンケート回答</span> or <span style={{ color: "#38BDF8", fontWeight: 900 }}>お試しFP相談申込</span>で<br />
                 <span style={{ color: "#DC2626", fontWeight: 900 }}>資産形成シミュレーター</span>を入手
               </p>
               <div style={{
