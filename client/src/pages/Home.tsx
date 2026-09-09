@@ -590,7 +590,7 @@ export default function Home() {
             {/* 吹き出し＋矢印 */}
             <div style={{ textAlign: "center", marginBottom: "10px" }}>
               <p style={{ fontSize: "0.9rem", fontWeight: 700, color: "#374151", margin: "0 0 10px", letterSpacing: "0em", whiteSpace: "nowrap" }}>
-                あなたの現状によって<span style={{ color: "#DC2626", fontWeight: 900 }}>答え</span>の範囲が変わります
+                アンケート回答orお試しFP相談で<span style={{ color: "#DC2626", fontWeight: 900 }}>資産形成シミュレーター</span>を入手
               </p>
               <div style={{
                 display: "inline-block",
