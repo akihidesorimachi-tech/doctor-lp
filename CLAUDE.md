@@ -25,6 +25,15 @@
   styles) instead of inventing new ones. Search the codebase for a similar existing
   element first (e.g. `grep -rn "boxShadow" client/src`) and match it, rather than
   designing from scratch.
+- Exception — no pre-approval needed: readability polish that stays within the
+  scope of a change already being made, and uses only patterns already used
+  elsewhere on the site (e.g. color-coding text with colors already present in the
+  codebase, choosing a natural line-break point, adjusting line-height/spacing for
+  legibility). Treat this as part of implementing the change, same as the mobile
+  viewport check below — just do it, don't ask first.
+  Still summarize/ask first for anything bigger: a genuinely new color/pattern not
+  yet used on the site, a layout change, or anything extending beyond the specific
+  text/element the user pointed at.
 
 ## Implementation quality checks (applies within the requested scope)
 
