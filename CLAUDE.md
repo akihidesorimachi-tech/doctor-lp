@@ -11,6 +11,10 @@
 - If a request is vague or open to interpretation (e.g. "make it look more like a
   button," "improve the design"), do not guess silently. State the specific plan
   (which file/lines, what will visually change) before editing, or ask.
+- If, while working, you believe something outside the explicitly requested scope
+  needs to change too (e.g. a related file, a shared component, a knock-on effect),
+  do not change it silently. Stop and ask first, explaining why you think it's
+  needed — then proceed only after the user confirms.
 
 ## Design/style changes specifically
 
