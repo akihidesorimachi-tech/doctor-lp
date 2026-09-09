@@ -69,6 +69,9 @@ export default function FeeSection() {
             <p style={{ fontSize: "0.65rem", letterSpacing: "0.15em", color: "rgba(255,255,255,0.5)", marginBottom: "6px" }}>
               TODAY'S OFFER
             </p>
+            <p style={{ fontSize: "0.85rem", fontWeight: 900, color: "#fff", marginBottom: "4px" }}>
+              お試しFP相談
+            </p>
             <p style={{ fontSize: "2rem", fontWeight: 900, color: "#F5C400", marginBottom: "4px" }}>
               2回まで無料
             </p>
