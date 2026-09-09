@@ -134,24 +134,24 @@ export default function AnswerPage() {
         top: 0,
         zIndex: 40,
       }}>
-        <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
+        <div style={{ display: "flex", gap: "6px", alignItems: "center" }}>
           <span style={{
-            fontSize: "0.82rem", fontWeight: 900, padding: "4px 10px",
-            border: "2px solid #1B2A5E", borderRadius: "4px", color: "#fff", background: "#1B2A5E"
+            fontSize: "0.75rem", fontWeight: 900, padding: "3px 8px",
+            border: "2px solid #1B2A5E", borderRadius: "4px", color: "#fff", background: "#1B2A5E", whiteSpace: "nowrap"
           }}>
             勤務医限定
           </span>
           <span style={{
-            fontSize: "0.82rem", fontWeight: 900, padding: "4px 10px",
-            border: "2px solid #1B2A5E", borderRadius: "4px", color: "#1B2A5E", background: "#fff"
+            fontSize: "0.75rem", fontWeight: 900, padding: "3px 8px",
+            border: "2px solid #1B2A5E", borderRadius: "4px", color: "#1B2A5E", background: "#fff", whiteSpace: "nowrap"
           }}>
             お試しFP相談
           </span>
         </div>
         <span style={{
-          fontSize: "0.82rem", fontWeight: 900, padding: "4px 10px",
+          fontSize: "0.72rem", fontWeight: 900, padding: "4px 8px",
           background: "#DC2626", color: "#fff",
-          borderRadius: "4px", letterSpacing: "0.03em"
+          borderRadius: "4px", letterSpacing: "0.02em", whiteSpace: "nowrap"
         }}>
           9月限定先着15名
         </span>
