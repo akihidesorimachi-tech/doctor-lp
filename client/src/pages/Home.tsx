@@ -1440,6 +1440,62 @@ export default function Home() {
                     </div>
                   )}
                 </div>
+
+                {/* 問題3アコーディオン */}
+                <div style={{ border: "1.5px solid #7C3AED", overflow: "hidden", marginBottom: "10px" }}>
+                  <div
+                    onClick={() => toggleProblem('inter-3')}
+                    style={{ background: openProblems['inter-3'] ? "#F5F3FF" : "#fff", borderLeft: "4px solid #7C3AED", cursor: "pointer", padding: "14px 16px", display: "flex", justifyContent: "space-between", alignItems: "center" }}
+                  >
+                    <p style={{ fontSize: "0.92rem", fontWeight: 900, color: "#7C3AED", margin: 0 }}>問題3．本当にオルカンやS&P500がベストか？</p>
+                    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "2px", flexShrink: 0, marginLeft: "8px" }}>
+                      <span style={{ fontSize: "0.7rem", color: "#7C3AED", fontWeight: 700, whiteSpace: "nowrap" }}>詳しく</span>
+                      <span style={{ fontSize: "0.75rem", color: "#7C3AED", transition: "transform 0.2s", display: "inline-block", transform: openProblems['inter-3'] ? "rotate(180deg)" : "rotate(0deg)" }}>▼</span>
+                    </div>
+                  </div>
+                  {openProblems['inter-3'] && (
+                    <div style={{ background: "#F5F7FA", padding: "20px 16px" }}>
+                      <p style={{ fontSize: "0.88rem", color: "#374151", lineHeight: 1.7, marginBottom: "12px" }}>
+                        「オルカン」「S&P500」で検索すれば情報は溢れていますが、一括りに「インデックス」と言っても値動きの性質が大きく異なる種類が存在することはご存知でしょうか。
+                      </p>
+                      <div style={{ background: "#fff", border: "1px solid #E5E7EB", borderRadius: "10px", padding: "16px", marginBottom: "16px" }}>
+                        <p style={{ fontSize: "0.82rem", fontWeight: 700, color: "#1B2A5E", marginBottom: "12px" }}>
+                          同じ「インデックス」でも中身は様々
+                        </p>
+                        {[
+                          { icon: "🌍", title: "オルカン・S&P500", body: "世界中・米国の大型株に幅広く分散。値動きは比較的穏やかで王道の選択肢です。" },
+                          { icon: "🚀", title: "FANG+", body: "米国の主要ハイテク企業10銘柄に集中投資。成長期待は大きい分、値動きも大きくなります。" },
+                          { icon: "🎯", title: "S&P10", body: "S&P500の中でも時価総額上位10銘柄に絞った指数。少数精鋭でリターン・リスクともに大きくなります。" },
+                        ].map((item) => (
+                          <div key={item.title} style={{ display: "flex", gap: "10px", marginBottom: "12px", alignItems: "flex-start" }}>
+                            <span style={{ fontSize: "1.3rem", flexShrink: 0, lineHeight: 1.3 }}>{item.icon}</span>
+                            <div>
+                              <p style={{ fontSize: "0.82rem", fontWeight: 900, color: "#1B2A5E", margin: "0 0 3px" }}>{item.title}</p>
+                              <p style={{ fontSize: "0.78rem", color: "#374151", lineHeight: 1.6, margin: 0 }}>{item.body}</p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                      <div style={{
+                        background: "#F5F3FF", border: "2px solid #7C3AED", borderRadius: "10px",
+                        padding: "14px 16px", marginBottom: "12px"
+                      }}>
+                        <p style={{ fontSize: "0.88rem", color: "#1B2A5E", lineHeight: 1.85, margin: 0 }}>
+                          <span style={{ display: "flex", alignItems: "flex-start", gap: "6px" }}>
+                            <span style={{ fontSize: "1.1rem", lineHeight: 1.4, flexShrink: 0 }}>💡</span>
+                            <span>YouTubeやAIの回答は不特定多数に向けた<strong>一般解</strong>です。年収・資産状況が異なる<strong style={{ color: "#7C3AED" }}>高年収の勤務医</strong>にとって、必ずしも最適とは限りません。</span>
+                          </span>
+                        </p>
+                      </div>
+                      <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
+                        <span style={{ fontSize: "1.2rem", color: "#F5C400", flexShrink: 0, lineHeight: 1 }}>▶</span>
+                        <p style={{ fontSize: "0.88rem", fontWeight: 900, color: "#F5C400", margin: 0, lineHeight: 1.6 }}>
+                          FANG+やS&P10のようなハイボラティリティ指数を上手く組み合わせられるかどうかで、将来の資産形成に大きな差が生まれます。
+                        </p>
+                      </div>
+                    </div>
+                  )}
+                </div>
             </div>
           </section>
           <div style={{ background: "#fff", padding: "20px 16px 16px", textAlign: "center", borderTop: "2px solid #FECACA" }}>
