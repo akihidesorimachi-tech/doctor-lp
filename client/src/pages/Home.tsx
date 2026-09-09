@@ -1460,17 +1460,16 @@ export default function Home() {
                       </p>
                       <div style={{ background: "#fff", border: "1px solid #E5E7EB", borderRadius: "10px", padding: "16px", marginBottom: "16px" }}>
                         <p style={{ fontSize: "0.82rem", fontWeight: 700, color: "#1B2A5E", marginBottom: "4px" }}>
-                          過去5年平均利回り（年率換算・目安）
+                          過去5年平均利回り（年率換算）
                         </p>
                         <p style={{ fontSize: "0.68rem", color: "#9CA3AF", marginBottom: "12px", lineHeight: 1.5 }}>
-                          ※各指数の公表データをもとにした概算値。為替の影響を含み、将来の運用成果を保証するものではありません。
+                          ※公表データをもとにした参考値（円建て）。為替の影響を含み、将来の運用成果を保証するものではありません。
                         </p>
                         <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
                           {[
-                            { label: "オルカン（全世界株式）", value: "約13%", color: "#1B2A5E" },
-                            { label: "S&P500", value: "約16%", color: "#1B2A5E" },
-                            { label: "FANG+", value: "約28%", color: "#7C3AED" },
-                            { label: "S&P10", value: "約20%", color: "#7C3AED" },
+                            { label: "オルカン（全世界株式）", value: "約20.1%", color: "#1B2A5E" },
+                            { label: "S&P500", value: "約22.6%", color: "#1B2A5E" },
+                            { label: "FANG+", value: "約29.5%", color: "#7C3AED" },
                           ].map((row) => (
                             <div key={row.label} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", background: "#F5F7FA", borderRadius: "8px", padding: "8px 12px", border: "1px solid #E5E7EB" }}>
                               <span style={{ fontSize: "0.82rem", fontWeight: 700, color: "#1B2A5E" }}>{row.label}</span>
@@ -1486,7 +1485,7 @@ export default function Home() {
                         <p style={{ fontSize: "0.88rem", color: "#1B2A5E", lineHeight: 1.85, margin: 0 }}>
                           <span style={{ display: "flex", alignItems: "flex-start", gap: "6px" }}>
                             <span style={{ fontSize: "1.1rem", lineHeight: 1.4, flexShrink: 0 }}>⚠️</span>
-                            <span>FANG+やS&P10は高いリターンが期待できる一方、値動きの<strong style={{ color: "#7C3AED" }}>リスクも大きい</strong>指数です。安全資産や他のインデックスと組み合わせて活用することが重要です。</span>
+                            <span>FANG+やS&P10のような集中投資型の指数は高いリターンが期待できる一方、値動きの<strong style={{ color: "#7C3AED" }}>リスクも大きく</strong>なります。安全資産や他のインデックスと組み合わせて活用することが重要です。</span>
                           </span>
                         </p>
                       </div>
