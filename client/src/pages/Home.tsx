@@ -274,7 +274,7 @@ function SurveyBlock({ answerPath, answerLabel, accentColor, navigate, q1, setQ1
         transition: "border-radius 0.2s, background 0.2s",
       }}
     >
-      <span>アンケートに回答して<span style={{ color: accentColor, fontWeight: 900 }}>答え</span>と<br /><span style={{ color: accentColor, fontWeight: 900 }}>お試し相談クーポン</span>を入手</span>
+      <span>アンケートに回答して<span style={{ color: accentColor, fontWeight: 900 }}>答え</span>と<br /><span style={{ color: accentColor, fontWeight: 900 }}>資産形成シミュレーター</span>・<br /><span style={{ color: accentColor, fontWeight: 900 }}>お試し相談クーポン</span>を入手</span>
       <span style={{
         display: "inline-block",
         transition: "transform 0.3s",
