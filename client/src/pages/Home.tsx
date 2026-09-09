@@ -690,11 +690,18 @@ export default function Home() {
                 <p style={{ color: "#059669", fontWeight: 900, fontSize: "0.85rem", letterSpacing: "0.1em", marginBottom: "8px" }}>FOR BEGINNERS</p>
               </div>
               <div style={{ padding: "0 16px 4px" }}>
-                <img
-                  src="/images/beginner_catchcopy_b7d0273c.jpeg"
-                  alt="何から始めれば良い？忙しいので効率的に答えを知りたい"
-                  style={{ width: "100%", height: "auto", display: "block" }}
-                />
+                <div style={{ position: "relative" }}>
+                  <img
+                    src="/images/beginner_catchcopy_b7d0273c.jpeg"
+                    alt="何から始めれば良い？忙しいので効率的に答えを知りたい"
+                    style={{ width: "100%", height: "auto", display: "block" }}
+                  />
+                  <button
+                    aria-label=""
+                    onClick={() => navigate("/answer-beginner")}
+                    style={{ position: "absolute", top: 0, right: 0, width: "30%", height: "30%", border: "none", background: "transparent", cursor: "pointer", padding: 0 }}
+                  />
+                </div>
               </div>
             </div>
           </section>
@@ -926,11 +933,18 @@ export default function Home() {
                 <p style={{ color: "#2563EB", fontWeight: 900, fontSize: "0.85rem", letterSpacing: "0.1em", marginBottom: "8px" }}>FOR ELEMENTARY</p>
               </div>
               <div style={{ padding: "0 16px 4px" }}>
-                <img
-                  src="/images/catchcopy_elementary_dfabc8a7.jpeg"
-                  alt="少額投資だけで満足している勤務医の先生へ"
-                  style={{ width: "100%", height: "auto", display: "block" }}
-                />
+                <div style={{ position: "relative" }}>
+                  <img
+                    src="/images/catchcopy_elementary_dfabc8a7.jpeg"
+                    alt="少額投資だけで満足している勤務医の先生へ"
+                    style={{ width: "100%", height: "auto", display: "block" }}
+                  />
+                  <button
+                    aria-label=""
+                    onClick={() => navigate("/answer-elementary")}
+                    style={{ position: "absolute", top: 0, right: 0, width: "30%", height: "30%", border: "none", background: "transparent", cursor: "pointer", padding: 0 }}
+                  />
+                </div>
               </div>
             </div>
           </section>
@@ -1235,11 +1249,18 @@ export default function Home() {
                 <p style={{ color: "#DC2626", fontWeight: 900, fontSize: "0.85rem", letterSpacing: "0.1em", marginBottom: "8px" }}>FOR INTERMEDIATE</p>
               </div>
               <div style={{ padding: "0 16px 4px" }}>
-                <img
-                  src="/images/catchcopy_doctor_643479f5.jpeg"
-                  alt="NISAでオルカンやS&P500だけで本当に大丈夫なのか？"
-                  style={{ width: "100%", height: "auto", display: "block" }}
-                />
+                <div style={{ position: "relative" }}>
+                  <img
+                    src="/images/catchcopy_doctor_643479f5.jpeg"
+                    alt="NISAでオルカンやS&P500だけで本当に大丈夫なのか？"
+                    style={{ width: "100%", height: "auto", display: "block" }}
+                  />
+                  <button
+                    aria-label=""
+                    onClick={() => navigate("/answer-intermediate")}
+                    style={{ position: "absolute", top: 0, right: 0, width: "30%", height: "30%", border: "none", background: "transparent", cursor: "pointer", padding: 0 }}
+                  />
+                </div>
               </div>
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: "0", padding: "10px 0 16px" }}>
@@ -1448,11 +1469,18 @@ export default function Home() {
                 <p style={{ color: "#7C3AED", fontWeight: 900, fontSize: "0.85rem", letterSpacing: "0.1em", marginBottom: "8px" }}>FOR ADVANCED</p>
               </div>
               <div style={{ padding: "0 16px 4px" }}>
-                <img
-                  src="/images/catchcopy_advanced_56d77ae8.jpeg"
-                  alt="個別株・債券も持つ上級者の勤務医の先生へ"
-                  style={{ width: "100%", height: "auto", display: "block" }}
-                />
+                <div style={{ position: "relative" }}>
+                  <img
+                    src="/images/catchcopy_advanced_56d77ae8.jpeg"
+                    alt="個別株・債券も持つ上級者の勤務医の先生へ"
+                    style={{ width: "100%", height: "auto", display: "block" }}
+                  />
+                  <button
+                    aria-label=""
+                    onClick={() => navigate("/answer-advanced")}
+                    style={{ position: "absolute", top: 0, right: 0, width: "30%", height: "30%", border: "none", background: "transparent", cursor: "pointer", padding: 0 }}
+                  />
+                </div>
               </div>
               {/* 上級者問題サマリーカード */}
             </div>
