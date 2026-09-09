@@ -251,8 +251,7 @@ function SurveyBlock({ answerPath, answerLabel, accentColor, navigate, q1, setQ1
   const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   const [q3Occupation, setQ3Occupation] = useState<"doctor" | "other" | "">(q3Specialty.startsWith("other:") ? "other" : q3Specialty !== "" ? "doctor" : "");
   const [q3OtherText, setQ3OtherText] = useState(q3Specialty.startsWith("other:") ? q3Specialty.slice(6) : "");
-  const [q3DoctorSpecialty, setQ3DoctorSpecialty] = useState(q3Specialty.startsWith("other:") ? "" : q3Specialty);
-  const q3Valid = q3Occupation === "doctor" ? q3DoctorSpecialty !== "" : q3Occupation === "other" ? q3OtherText.trim() !== "" : false;
+  const q3Valid = q3Occupation === "doctor" ? true : q3Occupation === "other" ? q3OtherText.trim() !== "" : false;
   const isSurveyValid = q1Valid && q3Valid && emailValid;
   return (
   <div id="survey-block" data-survey-open={localOpen ? 'true' : 'false'} style={{ padding: "0 16px 24px" }}>
@@ -338,7 +337,7 @@ function SurveyBlock({ answerPath, answerLabel, accentColor, navigate, q1, setQ1
                 onClick={() => {
                   setQ3Occupation(val);
                   if (val === "doctor") {
-                    setQ3Specialty(q3DoctorSpecialty);
+                    setQ3Specialty("医師");
                   } else {
                     setQ3Specialty("other:" + q3OtherText);
                   }
@@ -355,35 +354,6 @@ function SurveyBlock({ answerPath, answerLabel, accentColor, navigate, q1, setQ1
               </button>
             ))}
           </div>
-          {/* 医師 → 専門科選択 */}
-          {q3Occupation === "doctor" && (
-            <select
-              value={q3DoctorSpecialty}
-              onChange={(e) => {
-                setQ3DoctorSpecialty(e.target.value);
-                setQ3Specialty(e.target.value);
-              }}
-              style={{
-                width: "100%", padding: "10px 12px", borderRadius: "8px",
-                border: "1.5px solid #D1D5DB", fontSize: "0.88rem",
-                color: q3DoctorSpecialty ? "#111827" : "#9CA3AF",
-                background: "#fff", appearance: "auto",
-              }}
-            >
-              <option value="">専門科を選択してください</option>
-              <option value="内科（循環器・消化器・呼吸器など）">内科（循環器・消化器・呼吸器など）</option>
-              <option value="外科（消化器外科・心臓血管外科など）">外科（消化器外科・心臓血管外科など）</option>
-              <option value="整形外科">整形外科</option>
-              <option value="小児科">小児科</option>
-              <option value="産婦人科">産婦人科</option>
-              <option value="精神科（心療内科含む）">精神科（心療内科含む）</option>
-              <option value="眼科">眼科</option>
-              <option value="耳鼻咽喉科">耳鼻咽喉科</option>
-              <option value="皮膚科">皮膚科</option>
-              <option value="泌尿器科">泌尿器科</option>
-              <option value="その他">その他</option>
-            </select>
-          )}
           {/* それ以外 → 自由記入 */}
           {q3Occupation === "other" && (
             <input
@@ -460,7 +430,7 @@ function SurveyBlock({ answerPath, answerLabel, accentColor, navigate, q1, setQ1
         )}
         {!isSurveyValid && (
           <p style={{ fontSize: "0.75rem", color: "#9CA3AF", textAlign: "center", marginTop: "6px" }}>
-            {q1 === "" ? "質問1を選択してください" : !q1Valid ? "質問1の内容を入力してください" : !q3Valid ? (q3Occupation === "" ? "質問2（職業）を選択してください" : q3Occupation === "doctor" ? "専門科を選択してください" : "職業を入力してください") : !emailValid ? "メールアドレスを正しく入力してください" : ""}
+            {q1 === "" ? "質問1を選択してください" : !q1Valid ? "質問1の内容を入力してください" : !q3Valid ? (q3Occupation === "" ? "質問2（職業）を選択してください" : "職業を入力してください") : !emailValid ? "メールアドレスを正しく入力してください" : ""}
           </p>
         )}
       </div>
