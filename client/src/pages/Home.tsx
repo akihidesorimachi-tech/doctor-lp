@@ -1489,12 +1489,6 @@ export default function Home() {
                           </span>
                         </p>
                       </div>
-                      <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
-                        <span style={{ fontSize: "1.2rem", color: "#F5C400", flexShrink: 0, lineHeight: 1 }}>▶</span>
-                        <p style={{ fontSize: "0.88rem", fontWeight: 900, color: "#F5C400", margin: 0, lineHeight: 1.6 }}>
-                          こうした指数を上手く組み合わせられるかどうかで、将来の資産形成に大きな差が生まれます。
-                        </p>
-                      </div>
                     </div>
                   )}
                 </div>
