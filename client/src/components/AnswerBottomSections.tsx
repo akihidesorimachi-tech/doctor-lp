@@ -550,7 +550,7 @@ export default function AnswerBottomSections() {
             onClick={() => navigate('/booking')}
             style={{
               width: "100%", padding: "14px", borderRadius: "8px", border: "none", cursor: "pointer",
-              background: "#F5C400",
+              background: "#38BDF8",
               color: "#fff", fontWeight: 900, fontSize: "0.95rem",
               display: "flex", alignItems: "center", justifyContent: "center", gap: "6px"
             }}

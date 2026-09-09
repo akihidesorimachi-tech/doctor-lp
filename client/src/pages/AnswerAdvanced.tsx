@@ -347,7 +347,7 @@ export default function AnswerAdvanced() {
               onClick={() => navigate('/booking')}
               style={{
                 width: "100%", padding: "14px",
-                background: "#F5C400",
+                background: "#38BDF8",
                 color: "#1B2A5E", fontWeight: 900, fontSize: "0.95rem",
                 border: "none", borderRadius: "10px", cursor: "pointer",
                 display: "flex", alignItems: "center", justifyContent: "center", gap: "8px"

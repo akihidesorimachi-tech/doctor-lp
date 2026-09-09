@@ -590,7 +590,7 @@ export default function Home() {
             {/* 吹き出し＋矢印 */}
             <div style={{ textAlign: "center", marginBottom: "10px" }}>
               <p style={{ fontSize: "0.9rem", fontWeight: 700, color: "#374151", margin: "0 0 10px", letterSpacing: "0em", lineHeight: 1.6 }}>
-                <span style={{ color: "#2563EB", fontWeight: 900 }}>アンケート回答</span>or<span style={{ color: "#F5C400", fontWeight: 900 }}>お試しFP相談申込</span>で<br />
+                <span style={{ color: "#2563EB", fontWeight: 900 }}>アンケート回答</span>or<span style={{ color: "#38BDF8", fontWeight: 900 }}>お試しFP相談申込</span>で<br />
                 <span style={{ color: "#DC2626", fontWeight: 900 }}>資産形成シミュレーター</span>を入手
               </p>
               <div style={{
@@ -2166,9 +2166,9 @@ export default function Home() {
                 onClick={() => navigate("/booking")}
                 style={{
                   width: "100%", padding: "14px 16px", borderRadius: "10px", border: "none", cursor: "pointer",
-                  background: "#F5C400",
+                  background: "#38BDF8",
                   color: "#fff",
-                  boxShadow: "0 4px 14px rgba(245,196,0,0.35)",
+                  boxShadow: "0 4px 14px rgba(56,189,248,0.35)",
                   display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "2px"
                 }}
               >
