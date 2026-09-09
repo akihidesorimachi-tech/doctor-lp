@@ -554,7 +554,7 @@ export default function Home() {
           background: "#DC2626", color: "#fff",
           borderRadius: "4px", letterSpacing: "0.02em", whiteSpace: "nowrap"
         }}>
-          8月限定先着15名
+          9月限定先着15名
         </span>
       </div>
 
@@ -1822,7 +1822,7 @@ export default function Home() {
             ご希望をお選びください
           </p>
           <p style={{ fontSize: "0.85rem", color: "#DC2626", fontWeight: 700, marginBottom: "20px" }}>
-           5月申込限定・先着15名          </p>
+           9月申込限定・先着15名          </p>
           <div style={{
             background: "#FFFDE7", border: "1px solid #F5C400", borderRadius: "8px",
             padding: "10px 14px", marginBottom: "20px",

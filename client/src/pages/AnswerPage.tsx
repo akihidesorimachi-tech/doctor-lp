@@ -153,7 +153,7 @@ export default function AnswerPage() {
           background: "#DC2626", color: "#fff",
           borderRadius: "4px", letterSpacing: "0.03em"
         }}>
-          8月限定先着15名
+          9月限定先着15名
         </span>
       </div>
 

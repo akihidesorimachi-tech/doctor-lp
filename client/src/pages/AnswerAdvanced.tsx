@@ -138,7 +138,7 @@ export default function AnswerAdvanced() {
           </span>
         </div>
         <span style={{ fontSize: "0.82rem", fontWeight: 900, padding: "4px 10px", background: "#DC2626", color: "#fff", borderRadius: "4px", letterSpacing: "0.03em" }}>
-          8月限定先着15名
+          9月限定先着15名
         </span>
       </div>
 
