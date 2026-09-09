@@ -1455,25 +1455,29 @@ export default function Home() {
                   </div>
                   {openProblems['inter-3'] && (
                     <div style={{ background: "#F5F7FA", padding: "20px 16px" }}>
-                      <p style={{ fontSize: "0.88rem", color: "#374151", lineHeight: 1.7, marginBottom: "12px" }}>
-                        一括りに「インデックス」と言っても、実は値動きの性質が大きく異なる複数の種類が存在します。
+                      <p style={{ fontSize: "0.88rem", color: "#374151", lineHeight: 1.7, marginBottom: "16px" }}>
+                        一括りに「インデックス」と言っても、実は値動きの性質が大きく異なる複数の種類が存在します。YouTubeやAIの回答は不特定多数に向けた<strong>「大衆向けの答え」</strong>であり、それをそのまま取り入れてしまっていませんか？<strong style={{ color: "#7C3AED" }}>高年収の勤務医であるご自身</strong>に本当に合っているか、考えたことはありますか？
                       </p>
                       <div style={{ background: "#fff", border: "1px solid #E5E7EB", borderRadius: "10px", padding: "16px", marginBottom: "16px" }}>
-                        <p style={{ fontSize: "0.82rem", fontWeight: 700, color: "#1B2A5E", marginBottom: "12px" }}>
-                          同じ「インデックス」でも中身は様々
+                        <p style={{ fontSize: "0.82rem", fontWeight: 700, color: "#1B2A5E", marginBottom: "4px" }}>
+                          過去5年平均利回り（年率換算・目安）
                         </p>
-                        {[
-                          { icon: "🌍", title: "王道型（オルカン・S&P500など）", body: "世界中・米国の大型株に幅広く分散。値動きは比較的穏やかです。" },
-                          { icon: "🚀", title: "集中投資型", body: "有望な一部の銘柄に絞って投資。成長期待は大きい分、値動きも大きくなります。" },
-                        ].map((item) => (
-                          <div key={item.title} style={{ display: "flex", gap: "10px", marginBottom: "12px", alignItems: "flex-start" }}>
-                            <span style={{ fontSize: "1.3rem", flexShrink: 0, lineHeight: 1.3 }}>{item.icon}</span>
-                            <div>
-                              <p style={{ fontSize: "0.82rem", fontWeight: 900, color: "#1B2A5E", margin: "0 0 3px" }}>{item.title}</p>
-                              <p style={{ fontSize: "0.78rem", color: "#374151", lineHeight: 1.6, margin: 0 }}>{item.body}</p>
+                        <p style={{ fontSize: "0.68rem", color: "#9CA3AF", marginBottom: "12px", lineHeight: 1.5 }}>
+                          ※各指数の公表データをもとにした概算値。為替の影響を含み、将来の運用成果を保証するものではありません。
+                        </p>
+                        <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+                          {[
+                            { label: "オルカン（全世界株式）", value: "約13%", color: "#1B2A5E" },
+                            { label: "S&P500", value: "約16%", color: "#1B2A5E" },
+                            { label: "FANG+", value: "約28%", color: "#7C3AED" },
+                            { label: "S&P10", value: "約20%", color: "#7C3AED" },
+                          ].map((row) => (
+                            <div key={row.label} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", background: "#F5F7FA", borderRadius: "8px", padding: "8px 12px", border: "1px solid #E5E7EB" }}>
+                              <span style={{ fontSize: "0.82rem", fontWeight: 700, color: "#1B2A5E" }}>{row.label}</span>
+                              <span style={{ fontSize: "0.95rem", fontWeight: 900, color: row.color }}>{row.value}</span>
                             </div>
-                          </div>
-                        ))}
+                          ))}
+                        </div>
                       </div>
                       <div style={{
                         background: "#F5F3FF", border: "2px solid #7C3AED", borderRadius: "10px",
@@ -1481,15 +1485,15 @@ export default function Home() {
                       }}>
                         <p style={{ fontSize: "0.88rem", color: "#1B2A5E", lineHeight: 1.85, margin: 0 }}>
                           <span style={{ display: "flex", alignItems: "flex-start", gap: "6px" }}>
-                            <span style={{ fontSize: "1.1rem", lineHeight: 1.4, flexShrink: 0 }}>🤔</span>
-                            <span>YouTubeやAIの回答は、不特定多数に向けた<strong>「大衆向けの答え」</strong>です。それを脳死で採用してしまっていませんか？<strong style={{ color: "#7C3AED" }}>高年収の勤務医であるご自身</strong>に本当に合っているか、考えたことはありますか？</span>
+                            <span style={{ fontSize: "1.1rem", lineHeight: 1.4, flexShrink: 0 }}>⚠️</span>
+                            <span>FANG+やS&P10は高いリターンが期待できる一方、値動きの<strong style={{ color: "#7C3AED" }}>リスクも大きい</strong>指数です。安全資産や他のインデックスと組み合わせて活用することが重要です。</span>
                           </span>
                         </p>
                       </div>
                       <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
                         <span style={{ fontSize: "1.2rem", color: "#F5C400", flexShrink: 0, lineHeight: 1 }}>▶</span>
                         <p style={{ fontSize: "0.88rem", fontWeight: 900, color: "#F5C400", margin: 0, lineHeight: 1.6 }}>
-                          例えばFANG+やS&P10のようなハイボラティリティ指数を上手く活用できることを、知っていますか？
+                          こうした指数を上手く組み合わせられるかどうかで、将来の資産形成に大きな差が生まれます。
                         </p>
                       </div>
                     </div>
