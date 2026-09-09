@@ -1460,15 +1460,15 @@ export default function Home() {
                       </p>
                       <div style={{ background: "#fff", border: "1px solid #E5E7EB", borderRadius: "10px", padding: "16px", marginBottom: "16px" }}>
                         <p style={{ fontSize: "0.82rem", fontWeight: 700, color: "#1B2A5E", marginBottom: "4px" }}>
-                          平均利回り（年率換算・ドル建て、FANG+算出開始の2014年9月〜2026年5月）
+                          平均利回り（年率換算・ドル建て、2017年〜2025年の9年間）
                         </p>
                         <p style={{ fontSize: "0.68rem", color: "#9CA3AF", marginBottom: "12px", lineHeight: 1.5 }}>
-                          ※3指数とも歴史が最も浅いFANG+の算出開始時点に期間を揃えた参考値。FANG+は2017年9月の正式ローンチ以前をバックテスト値で算出。オルカンは近似値として10年平均を使用。日本の投資信託は円安の影響で円建てリターンがこれより高くなる場合があります。将来の運用成果を保証するものではありません。
+                          ※オルカン・S&P500はFANG+の正式ローンチ（2017年9月）に合わせた9年分の年次データから算出。FANG+のみローンチ後単独の公表値が確認できなかったため、指数算出開始（2014年9月）からの公表値を参考として使用（3年分のバックテスト期間を含む）。日本の投資信託は円安の影響で円建てリターンがこれより高くなる場合があります。将来の運用成果を保証するものではありません。
                         </p>
                         <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
                           {[
-                            { label: "オルカン（全世界株式）", value: "約12.8%", color: "#1B2A5E" },
-                            { label: "S&P500", value: "約14.0%", color: "#1B2A5E" },
+                            { label: "オルカン（全世界株式）", value: "約12.2%", color: "#1B2A5E" },
+                            { label: "S&P500", value: "約15.1%", color: "#1B2A5E" },
                             { label: "FANG+", value: "約28.6%", color: "#7C3AED" },
                           ].map((row) => (
                             <div key={row.label} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", background: "#F5F7FA", borderRadius: "8px", padding: "8px 12px", border: "1px solid #E5E7EB" }}>
