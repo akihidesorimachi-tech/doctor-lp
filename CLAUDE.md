@@ -22,6 +22,17 @@
   element first (e.g. `grep -rn "boxShadow" client/src`) and match it, rather than
   designing from scratch.
 
+## Implementation quality checks (applies within the requested scope)
+
+- Colors: pick from the site's existing, already-approved patterns (same rule as
+  above).
+- Before styling, determine whether the page/component being changed is mobile-
+  facing (e.g. LP pages, containers around `maxWidth: 480px`, mobile-only
+  components) versus not (e.g. admin/desktop-only screens).
+- For mobile-facing changes, check readability and layout at a ~375px viewport
+  (line wrapping, tap-target size, font legibility) as part of implementing the
+  change, before presenting it — don't wait to be asked.
+
 ## Git workflow
 
 - One logical change per commit. Keep commits small and easy to revert individually
