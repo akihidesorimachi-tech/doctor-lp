@@ -275,12 +275,14 @@ function SurveyBlock({ answerPath, answerLabel, accentColor, navigate, q1, setQ1
       }}
     >
       <span>アンケートに回答して<span style={{ color: accentColor, fontWeight: 900 }}>答え</span>と<br /><span style={{ color: accentColor, fontWeight: 900 }}>資産形成シミュレーター</span>・<br /><span style={{ color: accentColor, fontWeight: 900 }}>お試し相談クーポン</span>を入手</span>
-      <span style={{
-        display: "inline-block",
-        transition: "transform 0.3s",
-        transform: localOpen ? "rotate(180deg)" : "rotate(0deg)",
-        fontSize: "1.1rem",
-      }}>▼</span>
+      <span
+        className={!localOpen ? "bounce-arrow" : undefined}
+        style={{
+          display: "inline-block",
+          transition: "transform 0.3s",
+          transform: localOpen ? "rotate(180deg)" : "rotate(0deg)",
+          fontSize: "1.1rem",
+        }}>▼</span>
     </button>
     {localOpen && (
       <div style={{
