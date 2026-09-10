@@ -61,8 +61,13 @@ export default function AnswerAdvanced() {
               </div>
               <div style={{ flex: 1 }}>
                 <p style={{ margin: "0 0 4px", fontWeight: 900, fontSize: "0.9rem", color: "#F5C400" }}>
-                  メールに答えとお試し相談クーポンをお送りしました
+                  メールに以下をお送りしました
                 </p>
+                <ul style={{ margin: "0 0 6px", paddingLeft: "18px", display: "flex", flexDirection: "column", gap: "2px", fontSize: "0.82rem", color: "#fff", fontWeight: 700 }}>
+                  <li>答え</li>
+                  <li>資産形成シミュレータ</li>
+                  <li>お試し相談クーポン</li>
+                </ul>
                 <p style={{ margin: 0, fontSize: "0.78rem", color: "#CBD5E1", lineHeight: 1.5 }}>
                   届かない場合は迷惑メールフォルダもご確認ください
                 </p>
