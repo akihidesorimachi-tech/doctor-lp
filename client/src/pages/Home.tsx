@@ -2191,7 +2191,7 @@ export default function Home() {
                   <p style={{ fontSize: "0.85rem", fontWeight: 700, color: "#1B2A5E", marginBottom: "4px" }}>答え送付先 <span style={{ color: "#DC2626" }}>*</span></p>
                   <input type="email" placeholder="example@email.com" value={surveyEmail} onChange={(e) => setSurveyEmail(e.target.value)}
                     style={{ width: "100%", padding: "9px 10px", borderRadius: "8px", border: `1.5px solid ${emailValid && surveyEmail !== "" ? "#16A34A" : "#D1D5DB"}`, fontSize: "0.85rem", color: "#111827", background: "#fff", boxSizing: "border-box" }} />
-                  <p style={{ fontSize: "0.73rem", color: "#6B7280", marginTop: "5px", lineHeight: 1.5 }}>🎁 キャンペーン終了後も有効なお試し相談クーポンをお送りします。</p>
+                  <p style={{ fontSize: "0.73rem", color: "#6B7280", marginTop: "5px", lineHeight: 1.5 }}>🎁 資産形成シミュレーターと、キャンペーン終了後も有効なお試し相談クーポンをお送りします。</p>
                 </div>
                 {/* 送信ボタン */}
                 <button
