@@ -393,7 +393,7 @@ function SurveyBlock({ answerPath, answerLabel, accentColor, navigate, q1, setQ1
             }}
           />
           <p style={{ fontSize: "0.75rem", color: "#6B7280", marginTop: "6px", lineHeight: 1.6 }}>
-            🎁 キャンペーン終了後も有効なお試し相談クーポンをお送りします。
+            🎁 資産形成シミュレーターと、キャンペーン終了後も有効なお試し相談クーポンをお送りします。
           </p>
         </div>
         {/* 答えを見るボタン */}
