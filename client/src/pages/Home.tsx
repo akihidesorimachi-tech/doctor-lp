@@ -1939,7 +1939,7 @@ export default function Home() {
           </p>
 
           {/* 後日、個別相談を検討したい方 */}
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "10px" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "10px" }}>
             <p style={{ fontSize: "0.88rem", fontWeight: 700, color: "#1B2A5E", margin: 0 }}>
               後日、個別相談を検討したい方
             </p>
@@ -1975,7 +1975,7 @@ export default function Home() {
           })()}
 
           {/* 今、個別相談を予約したい方 */}
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", margin: "24px 0 10px" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "6px", margin: "24px 0 10px" }}>
             <p style={{ fontSize: "0.88rem", fontWeight: 700, color: "#1B2A5E", margin: 0 }}>
               今、個別相談を予約したい方
             </p>
