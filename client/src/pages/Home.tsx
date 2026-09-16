@@ -273,9 +273,6 @@ function SurveyBlock({ answerPath, answerLabel, accentColor, navigate, q1, setQ1
           <p style={{ fontSize: "0.95rem", fontWeight: 900, color: "#1B2A5E", marginBottom: "2px" }}>
             アンケートに回答して入手
           </p>
-          <p style={{ fontSize: "0.85rem", color: "#555", lineHeight: 1.4 }}>
-            資産形成シミュレータ・お試し相談クーポンも進呈
-          </p>
           <p style={{ fontSize: "0.78rem", color: "#999", marginTop: "2px" }}>3つの質問に答えるだけ・完全無料</p>
         </div>
         <ChevronRight
