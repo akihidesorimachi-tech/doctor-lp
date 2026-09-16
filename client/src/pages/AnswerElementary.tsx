@@ -143,7 +143,7 @@ export default function AnswerElementary() {
           </span>
         </div>
         <span style={{ fontSize: "0.72rem", fontWeight: 900, padding: "4px 8px", background: "#DC2626", color: "#fff", borderRadius: "4px", letterSpacing: "0.02em", whiteSpace: "nowrap" }}>
-          9月限定先着10名
+          9月限定先着7名
         </span>
       </div>
 
