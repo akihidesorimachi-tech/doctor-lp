@@ -167,14 +167,6 @@ const applyOptions = [
     sub: "30分～延長可 ・ 21時以降も対応可",
     color: "#1B2A5E",
   },
-  {
-    id: "tax-individual",
-    Icon: ClipboardList,
-    title: "税理士オンラインセミナー参加",
-    desc: "セミナー形式（60分）で税理士の話を聞きたい。",
-    sub: "",
-    color: "#059669",
-  },
 ];
 
 // ===== 相談者の声 =====
@@ -225,7 +217,7 @@ const q3Items = ["銀行預金", "個別株", "投資信託・ETF(株)", "投資
 
 const GAS_URL = "https://script.google.com/macros/s/AKfycby_A_PCC-yJDtt93jzGyRIKcZlPMWVDCHeyMgU5BjpXEAB5q-kn7S-faf1eC0SnqrjDog/exec";
 
-function SurveyBlock({ answerPath, answerLabel, accentColor, navigate, q1, setQ1, q2BankRatio, setQ2BankRatio, q2InvestRatio, setQ2InvestRatio, q3Specialty, setQ3Specialty, email, setEmail, forceOpen }: {
+function SurveyBlock({ answerPath, answerLabel, accentColor, navigate, q1, setQ1, q2BankRatio, setQ2BankRatio, q2InvestRatio, setQ2InvestRatio, q3Specialty, setQ3Specialty, email, setEmail, forceOpen, variant = "level" }: {
   answerPath: string;
   answerLabel: string;
   accentColor: string;
@@ -241,6 +233,7 @@ function SurveyBlock({ answerPath, answerLabel, accentColor, navigate, q1, setQ1
   email: string;
   setEmail: (v: string) => void;
   forceOpen?: boolean;
+  variant?: "level" | "cta";
 }) {
   const [localOpen, setLocalOpen] = useState(false);
   useEffect(() => { if (forceOpen) setLocalOpen(true); }, [forceOpen]);
@@ -254,36 +247,76 @@ function SurveyBlock({ answerPath, answerLabel, accentColor, navigate, q1, setQ1
   const q3Valid = q3Occupation === "doctor" ? true : q3Occupation === "other" ? q3OtherText.trim() !== "" : false;
   const isSurveyValid = q1Valid && q3Valid && emailValid;
   return (
-  <div id="survey-block" data-survey-open={localOpen ? 'true' : 'false'} style={{ padding: "0 16px 24px" }}>
+  <div id={variant === "cta" ? "survey-block-cta" : "survey-block"} data-survey-open={localOpen ? 'true' : 'false'} style={{ padding: variant === "cta" ? 0 : "0 16px 24px" }}>
     {/* アンケートに回答して答えを見る（アコーディオン風トリガー） */}
-    <button
-      onClick={() => setLocalOpen(!localOpen)}
-      style={{
-        width: "100%",
-        background: localOpen ? "#F9FAFB" : "#fff",
-        color: "#1B2A5E",
-        border: `2px solid ${accentColor}`,
-        borderRadius: localOpen ? "10px 10px 0 0" : "10px",
-        padding: "14px 16px",
-        fontSize: "0.95rem",
-        fontWeight: 900,
-        cursor: "pointer",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        transition: "border-radius 0.2s, background 0.2s",
-      }}
-    >
-      <span>アンケートに回答して<span style={{ color: accentColor, fontWeight: 900 }}>答え</span>と<br /><span style={{ color: accentColor, fontWeight: 900 }}>資産形成シミュレーター</span>・<br /><span style={{ color: accentColor, fontWeight: 900 }}>お試し相談クーポン</span>を入手</span>
-      <span
-        className={!localOpen ? "bounce-arrow" : undefined}
+    {variant === "cta" ? (
+      <button
+        onClick={() => setLocalOpen(!localOpen)}
         style={{
-          display: "inline-block",
-          transition: "transform 0.3s",
-          transform: localOpen ? "rotate(180deg)" : "rotate(0deg)",
-          fontSize: "1.1rem",
-        }}>▼</span>
-    </button>
+          width: "100%", display: "flex", alignItems: "center", gap: "14px",
+          padding: "16px 18px",
+          borderRadius: localOpen ? "10px 10px 0 0" : "10px",
+          background: "#fff",
+          border: `2px solid ${accentColor}`,
+          borderBottom: localOpen ? "none" : `2px solid ${accentColor}`,
+          cursor: "pointer", textAlign: "left",
+          boxShadow: "0 2px 8px rgba(0,0,0,0.06)",
+        }}
+      >
+        <div style={{
+          width: "44px", height: "44px", borderRadius: "8px", flexShrink: 0,
+          background: accentColor, display: "flex", alignItems: "center", justifyContent: "center"
+        }}>
+          <ClipboardList size={22} color="#fff" />
+        </div>
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <p style={{ fontSize: "0.95rem", fontWeight: 900, color: "#1B2A5E", marginBottom: "2px" }}>
+            アンケートに回答して答えを入手
+          </p>
+          <p style={{ fontSize: "0.85rem", color: "#555", lineHeight: 1.4 }}>
+            資産形成シミュレーター・お試し相談クーポンも進呈
+          </p>
+          <p style={{ fontSize: "0.78rem", color: "#999", marginTop: "2px" }}>3つの質問に答えるだけ・完全無料</p>
+        </div>
+        <ChevronRight
+          size={18}
+          style={{
+            color: accentColor, flexShrink: 0,
+            transform: localOpen ? "rotate(90deg)" : "none",
+            transition: "transform 0.2s",
+          }}
+        />
+      </button>
+    ) : (
+      <button
+        onClick={() => setLocalOpen(!localOpen)}
+        style={{
+          width: "100%",
+          background: localOpen ? "#F9FAFB" : "#fff",
+          color: "#1B2A5E",
+          border: `2px solid ${accentColor}`,
+          borderRadius: localOpen ? "10px 10px 0 0" : "10px",
+          padding: "14px 16px",
+          fontSize: "0.95rem",
+          fontWeight: 900,
+          cursor: "pointer",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          transition: "border-radius 0.2s, background 0.2s",
+        }}
+      >
+        <span>アンケートに回答して<span style={{ color: accentColor, fontWeight: 900 }}>答え</span>と<br /><span style={{ color: accentColor, fontWeight: 900 }}>資産形成シミュレーター</span>・<br /><span style={{ color: accentColor, fontWeight: 900 }}>お試し相談クーポン</span>を入手</span>
+        <span
+          className={!localOpen ? "bounce-arrow" : undefined}
+          style={{
+            display: "inline-block",
+            transition: "transform 0.3s",
+            transform: localOpen ? "rotate(180deg)" : "rotate(0deg)",
+            fontSize: "1.1rem",
+          }}>▼</span>
+      </button>
+    )}
     {localOpen && (
       <div style={{
         borderRadius: "0 0 10px 10px", border: `2px solid ${accentColor}`, borderTop: "none", padding: "20px 16px", marginBottom: "12px" }}>
@@ -1899,25 +1932,53 @@ export default function Home() {
       <section style={{ background: "#fff", padding: "36px 16px" }} id="apply-section">
         <div style={{ maxWidth: "480px", margin: "0 auto" }}>
           <h2 style={{ fontSize: "1.25rem", fontWeight: 900, color: "#1B2A5E", marginBottom: "6px" }}>
-            お試し相談に申し込む
+            特典を受け取る
           </h2>
-          <p style={{ fontSize: "0.92rem", color: "#555", marginBottom: "6px" }}>
+          <p style={{ fontSize: "0.92rem", color: "#555", marginBottom: "24px" }}>
             ご希望をお選びください
           </p>
-          <p style={{ fontSize: "0.85rem", color: "#DC2626", fontWeight: 700, marginBottom: "20px" }}>
-           9月申込限定・先着10名          </p>
-          <div style={{
-            background: "#FFFDE7", border: "1px solid #F5C400", borderRadius: "8px",
-            padding: "10px 14px", marginBottom: "20px",
-            display: "flex", gap: "8px", alignItems: "flex-start"
-          }}>
-            <AlertTriangle size={16} color="#F5C400" style={{ flexShrink: 0, marginTop: "2px" }} />
-            <p style={{ fontSize: "0.82rem", color: "#B8860B", lineHeight: 1.6 }}>
-              FPの稼働時間の都合上、申込枠に限りがあります。先着順ですので、申し込みはお早めに。
-            </p>
-          </div>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+          {/* 個別相談は後日検討したい方 */}
+          <p style={{ fontSize: "0.88rem", fontWeight: 700, color: "#1B2A5E", marginBottom: "10px" }}>
+            個別相談は後日検討したい方
+          </p>
+          {(() => {
+            const levelAnswerMap: Record<string, { path: string; label: string }> = {
+              beginner: { path: "/answer-beginner", label: "初心者" },
+              elementary: { path: "/answer-elementary", label: "初級者" },
+              intermediate: { path: "/answer-intermediate", label: "中級者" },
+              advanced: { path: "/answer-advanced", label: "上級者" },
+            };
+            const lv = activeLevel ? levelAnswerMap[activeLevel] : null;
+            return (
+              <SurveyBlock
+                navigate={navigate}
+                answerPath={lv?.path || "/answer-intermediate"}
+                answerLabel={lv?.label || "中級者"}
+                accentColor="#1B2A5E"
+                variant="cta"
+                q1={surveyQ1}
+                setQ1={setSurveyQ1}
+                q2BankRatio={surveyQ2BankRatio}
+                setQ2BankRatio={setSurveyQ2BankRatio}
+                q2InvestRatio={surveyQ2InvestRatio}
+                setQ2InvestRatio={setSurveyQ2InvestRatio}
+                q3Specialty={surveyQ3Specialty}
+                setQ3Specialty={setSurveyQ3Specialty}
+                email={surveyEmail}
+                setEmail={setSurveyEmail}
+              />
+            );
+          })()}
+
+          {/* 今個別相談を予約したい方 */}
+          <p style={{ fontSize: "0.88rem", fontWeight: 700, color: "#1B2A5E", margin: "24px 0 10px" }}>
+            今個別相談を予約したい方
+          </p>
+          <p style={{ fontSize: "0.85rem", color: "#DC2626", fontWeight: 700, marginBottom: "10px" }}>
+            9月申込限定・先着10名
+          </p>
+          <div style={{ display: "flex", flexDirection: "column", gap: "12px", marginBottom: "20px" }}>
             {applyOptions.map((opt) => {
               const OptIcon = opt.Icon;
               return (
@@ -1952,6 +2013,17 @@ export default function Home() {
                 </button>
               );
             })}
+          </div>
+
+          <div style={{
+            background: "#FFFDE7", border: "1px solid #F5C400", borderRadius: "8px",
+            padding: "10px 14px",
+            display: "flex", gap: "8px", alignItems: "flex-start"
+          }}>
+            <AlertTriangle size={16} color="#F5C400" style={{ flexShrink: 0, marginTop: "2px" }} />
+            <p style={{ fontSize: "0.82rem", color: "#B8860B", lineHeight: 1.6 }}>
+              FPの稼働時間の都合上、申込枠に限りがあります。先着順ですので、申し込みはお早めに。
+            </p>
           </div>
         </div>
       </section>
