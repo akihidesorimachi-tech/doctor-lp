@@ -455,7 +455,7 @@ function SurveyBlock({ answerPath, answerLabel, accentColor, navigate, q1, setQ1
             transition: "background 0.2s",
           }}
         >
-          {isSubmitting ? "送信中..." : <>{answerLabel}向けの<span style={{ color: (isSurveyValid && !isSubmitting) ? "#FDE047" : "#9CA3AF", fontWeight: 900 }}>答え</span>を見る</>}
+          {isSubmitting ? "送信中..." : variant === "cta" ? "特典を受け取る" : <>{answerLabel}向けの<span style={{ color: (isSurveyValid && !isSubmitting) ? "#FDE047" : "#9CA3AF", fontWeight: 900 }}>答え</span>を見る</>}
         </button>
         {submitError && (
           <p style={{ fontSize: "0.75rem", color: "#DC2626", textAlign: "center", marginTop: "6px" }}>{submitError}</p>
