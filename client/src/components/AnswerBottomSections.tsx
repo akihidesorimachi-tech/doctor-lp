@@ -302,7 +302,7 @@ export default function AnswerBottomSections() {
             ご希望をお選びください
           </p>
           <p style={{ fontSize: "0.85rem", color: "#DC2626", fontWeight: 700, marginBottom: "20px" }}>
-            9月申込限定・先着7名
+            9月申込限定・先着10名
           </p>
           <div style={{
             background: "#FFFDE7", border: "1px solid #F5C400", borderRadius: "8px",
