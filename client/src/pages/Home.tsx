@@ -274,7 +274,7 @@ function SurveyBlock({ answerPath, answerLabel, accentColor, navigate, q1, setQ1
             アンケートに回答して答えを入手
           </p>
           <p style={{ fontSize: "0.85rem", color: "#555", lineHeight: 1.4 }}>
-            資産形成シミュレーター・お試し相談クーポンも進呈
+            資産形成シミュレータ・お試し相談クーポンも進呈
           </p>
           <p style={{ fontSize: "0.78rem", color: "#999", marginTop: "2px" }}>3つの質問に答えるだけ・完全無料</p>
         </div>
@@ -306,7 +306,7 @@ function SurveyBlock({ answerPath, answerLabel, accentColor, navigate, q1, setQ1
           transition: "border-radius 0.2s, background 0.2s",
         }}
       >
-        <span>アンケートに回答して<span style={{ color: accentColor, fontWeight: 900 }}>答え</span>と<br /><span style={{ color: accentColor, fontWeight: 900 }}>資産形成シミュレーター</span>・<br /><span style={{ color: accentColor, fontWeight: 900 }}>お試し相談クーポン</span>を入手</span>
+        <span>アンケートに回答して<span style={{ color: accentColor, fontWeight: 900 }}>答え</span>と<br /><span style={{ color: accentColor, fontWeight: 900 }}>資産形成シミュレータ</span>・<br /><span style={{ color: accentColor, fontWeight: 900 }}>お試し相談クーポン</span>を入手</span>
         <span
           className={!localOpen ? "bounce-arrow" : undefined}
           style={{
@@ -426,7 +426,7 @@ function SurveyBlock({ answerPath, answerLabel, accentColor, navigate, q1, setQ1
             }}
           />
           <p style={{ fontSize: "0.75rem", color: "#6B7280", marginTop: "6px", lineHeight: 1.6 }}>
-            🎁 資産形成シミュレーターと、キャンペーン終了後も有効なお試し相談クーポンをお送りします。
+            🎁 資産形成シミュレータと、キャンペーン終了後も有効なお試し相談クーポンをお送りします。
           </p>
         </div>
         {/* 答えを見るボタン */}
@@ -626,7 +626,7 @@ export default function Home() {
             <div style={{ textAlign: "center", marginBottom: "10px" }}>
               <p style={{ fontSize: "0.9rem", fontWeight: 700, color: "#374151", margin: "0 0 10px", letterSpacing: "0em", lineHeight: 1.6 }}>
                 <span style={{ color: "#2563EB", fontWeight: 900 }}>アンケート回答</span> or <span style={{ color: "#38BDF8", fontWeight: 900 }}>お試しFP相談申込</span>で<br />
-                <span style={{ color: "#DC2626", fontWeight: 900 }}>資産形成シミュレーター</span>を入手
+                <span style={{ color: "#DC2626", fontWeight: 900 }}>資産形成シミュレータ</span>を入手
               </p>
               <div style={{
                 display: "inline-block",
@@ -1935,7 +1935,7 @@ export default function Home() {
             特典を受け取る
           </h2>
           <p style={{ fontSize: "0.92rem", color: "#555", marginBottom: "24px" }}>
-            資産形成シミュレーター・お試し相談クーポンを進呈
+            資産形成シミュレータ・お試し相談クーポンを進呈
           </p>
 
           {/* 後日、個別相談を検討したい方 */}
@@ -2269,7 +2269,7 @@ export default function Home() {
                   <p style={{ fontSize: "0.85rem", fontWeight: 700, color: "#1B2A5E", marginBottom: "4px" }}>答え送付先 <span style={{ color: "#DC2626" }}>*</span></p>
                   <input type="email" placeholder="example@email.com" value={surveyEmail} onChange={(e) => setSurveyEmail(e.target.value)}
                     style={{ width: "100%", padding: "9px 10px", borderRadius: "8px", border: `1.5px solid ${emailValid && surveyEmail !== "" ? "#16A34A" : "#D1D5DB"}`, fontSize: "0.85rem", color: "#111827", background: "#fff", boxSizing: "border-box" }} />
-                  <p style={{ fontSize: "0.73rem", color: "#6B7280", marginTop: "5px", lineHeight: 1.5 }}>🎁 資産形成シミュレーターと、キャンペーン終了後も有効なお試し相談クーポンをお送りします。</p>
+                  <p style={{ fontSize: "0.73rem", color: "#6B7280", marginTop: "5px", lineHeight: 1.5 }}>🎁 資産形成シミュレータと、キャンペーン終了後も有効なお試し相談クーポンをお送りします。</p>
                 </div>
                 {/* 送信ボタン */}
                 <button
