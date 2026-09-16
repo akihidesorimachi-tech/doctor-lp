@@ -1935,7 +1935,7 @@ export default function Home() {
             特典を受け取る
           </h2>
           <p style={{ fontSize: "0.92rem", color: "#555", marginBottom: "24px" }}>
-            ご希望をお選びください
+            資産形成シミュレーター・お試し相談クーポンを進呈
           </p>
 
           {/* 後日、個別相談を検討したい方 */}
