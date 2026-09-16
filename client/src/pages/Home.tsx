@@ -1938,10 +1938,13 @@ export default function Home() {
             ご希望をお選びください
           </p>
 
-          {/* 個別相談は後日検討したい方 */}
-          <p style={{ fontSize: "0.88rem", fontWeight: 700, color: "#1B2A5E", marginBottom: "10px" }}>
-            個別相談は後日検討したい方
-          </p>
+          {/* 後日、個別相談を検討したい方 */}
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "10px" }}>
+            <p style={{ fontSize: "0.88rem", fontWeight: 700, color: "#1B2A5E", margin: 0 }}>
+              後日、個別相談を検討したい方
+            </p>
+            <span className="bounce-arrow" style={{ display: "inline-block", fontSize: "1rem", color: "#1B2A5E" }}>▼</span>
+          </div>
           {(() => {
             const levelAnswerMap: Record<string, { path: string; label: string }> = {
               beginner: { path: "/answer-beginner", label: "初心者" },
@@ -1971,10 +1974,13 @@ export default function Home() {
             );
           })()}
 
-          {/* 今個別相談を予約したい方 */}
-          <p style={{ fontSize: "0.88rem", fontWeight: 700, color: "#1B2A5E", margin: "24px 0 10px" }}>
-            今個別相談を予約したい方
-          </p>
+          {/* 今、個別相談を予約したい方 */}
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", margin: "24px 0 10px" }}>
+            <p style={{ fontSize: "0.88rem", fontWeight: 700, color: "#1B2A5E", margin: 0 }}>
+              今、個別相談を予約したい方
+            </p>
+            <span className="bounce-arrow" style={{ display: "inline-block", fontSize: "1rem", color: "#1B2A5E" }}>▼</span>
+          </div>
           <p style={{ fontSize: "0.85rem", color: "#DC2626", fontWeight: 700, marginBottom: "10px" }}>
             9月申込限定・先着10名
           </p>
