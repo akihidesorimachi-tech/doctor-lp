@@ -163,7 +163,7 @@ const applyOptions = [
     id: "fp-individual",
     Icon: User,
     title: "1級FPお試し相談(オンライン可)",
-    desc: "FPの空き状況を確認する",
+    desc: "9月申込限定・先着10名",
     sub: "30分～延長可 ・ 21時以降も対応可",
     color: "#1B2A5E",
   },
@@ -1981,9 +1981,6 @@ export default function Home() {
             </p>
             <span className="bounce-arrow" style={{ display: "inline-block", fontSize: "1rem", color: "#1B2A5E" }}>▼</span>
           </div>
-          <p style={{ fontSize: "0.85rem", color: "#DC2626", fontWeight: 700, marginBottom: "10px" }}>
-            9月申込限定・先着10名
-          </p>
           <div style={{ display: "flex", flexDirection: "column", gap: "12px", marginBottom: "20px" }}>
             {applyOptions.map((opt) => {
               const OptIcon = opt.Icon;
@@ -2010,7 +2007,7 @@ export default function Home() {
                     <p style={{ fontSize: "0.95rem", fontWeight: 900, color: "#1B2A5E", marginBottom: "2px" }}>
                       {opt.title}
                     </p>
-                    <p style={{ fontSize: "0.85rem", color: "#555", lineHeight: 1.4 }}>{opt.desc}</p>
+                    <p style={{ fontSize: "0.85rem", color: "#DC2626", fontWeight: 700, lineHeight: 1.4 }}>{opt.desc}</p>
                     {opt.sub && (
                       <p style={{ fontSize: "0.78rem", color: "#999", marginTop: "2px" }}>{opt.sub}</p>
                     )}
