@@ -163,7 +163,7 @@ const applyOptions = [
     id: "fp-individual",
     Icon: User,
     title: "1級FPお試し相談(オンライン可)",
-    desc: "9月申込限定・先着10名",
+    desc: "10月申込限定・先着10名",
     sub: "30分～延長可 ・ 21時以降も対応可",
     color: "#1B2A5E",
   },
@@ -586,7 +586,7 @@ export default function Home() {
           background: "#DC2626", color: "#fff",
           borderRadius: "4px", letterSpacing: "0.02em", whiteSpace: "nowrap"
         }}>
-          9月限定先着10名
+          10月限定先着10名
         </span>
       </div>
 
